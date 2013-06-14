@@ -14,5 +14,6 @@
 
 - (IBAction)open:(id)sender;
 - (IBAction)close:(id)sender;
+- (IBAction)duplicate:(id)sender;
 
 @end

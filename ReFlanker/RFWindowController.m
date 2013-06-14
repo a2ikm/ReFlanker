@@ -9,7 +9,6 @@
 #import "RFWindowController.h"
 
 @interface RFWindowController (PRIVATE)
-- (NSURL *)currentImageURL;
 - (void)loadCurrentImage;
 - (void)setImage:(NSImage *)image;
 - (void)reloadFileNames;

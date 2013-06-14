@@ -24,4 +24,6 @@
 - (IBAction)next:(id)sender;
 - (IBAction)previous:(id)sender;
 
+- (NSURL *)currentImageURL;
+
 @end

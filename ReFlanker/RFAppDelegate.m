@@ -10,6 +10,10 @@
 #import "RFWindow.h"
 #import "RFWindowController.h"
 
+@interface RFAppDelegate (PRIVATE)
+- (void)openNewWindow:(NSURL *)fileURL;
+@end
+
 @implementation RFAppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
@@ -22,15 +26,25 @@
     [panel setAllowedFileTypes:@[@"jpg",@"jpeg",@"png",@"gif",@"bmp"]];
     if([panel runModal] == NSOKButton) {
         NSURL *fileURL = [[panel URLs] objectAtIndex:0];
-        
-        RFWindowController *windowController = [[RFWindowController alloc] initWithWindowNibName:@"DocumentWindow" initialFileURL:fileURL];
-        [windowControllers addObject:windowController];
-        [windowController showWindow:self];
+        [self openNewWindow:fileURL];
     }
 }
 
 - (IBAction)close:(id)sender {
     [[[NSApp keyWindow] windowController] close];
+}
+
+- (IBAction)duplicate:(id)sender
+{
+    NSURL *fileURL = [[[NSApp keyWindow] windowController] currentImageURL];
+    [self openNewWindow:fileURL];
+}
+
+- (void)openNewWindow:(NSURL *)fileURL
+{
+    RFWindowController *windowController = [[RFWindowController alloc] initWithWindowNibName:@"DocumentWindow" initialFileURL:fileURL];
+    [windowControllers addObject:windowController];
+    [windowController showWindow:self];
 }
 
 @end
