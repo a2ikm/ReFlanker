@@ -25,6 +25,7 @@
 - (void)windowDidLoad
 {
     [super windowDidLoad];
+    maxSize = self.window.screen.visibleFrame.size;
     
     // Init imageView
     [[self imageView] setImageScaling:NSScaleToFit];
@@ -38,9 +39,13 @@
     [[self imageView] setImage:anImage];
     [[self window] setAspectRatio:[anImage size]];
     
-    NSRect frameRect = NSMakeRect(self.window.frame.origin.x, self.window.frame.origin.y,
-                                  anImage.size.width, anImage.size.height);
-    [[self window] setFrame:frameRect display:YES];
+    CGFloat x = self.window.frame.origin.x;
+    CGFloat y = self.window.frame.origin.y;
+    CGFloat w = anImage.size.width;
+    CGFloat h = anImage.size.height;
+    if (w > maxSize.width)  { h = h * maxSize.width / w;  w = maxSize.width; }
+    if (h > maxSize.height) { w = w * maxSize.height / h; h = maxSize.height; }
+    [[self window] setFrame:NSMakeRect(x, y, w, h) display:YES];
 }
 
 @end

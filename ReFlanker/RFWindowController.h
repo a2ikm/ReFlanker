@@ -13,6 +13,7 @@
 @interface RFWindowController : NSWindowController
 {
     NSURL *initialFileURL;
+    NSSize maxSize;
 }
 
 @property (strong) IBOutlet NSImageView *imageView;
