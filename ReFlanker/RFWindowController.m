@@ -7,6 +7,7 @@
 //
 
 #import "RFWindowController.h"
+#import "NSImage+PixelSize.h"
 
 @interface RFWindowController (PRIVATE)
 - (void)loadCurrentImage;
@@ -105,12 +106,14 @@
     [[self imageView] setImage:image];
     [[self window] setAspectRatio:[image size]];
     
-    CGFloat x = self.window.frame.origin.x;
-    CGFloat y = self.window.frame.origin.y;
-    CGFloat w = image.size.width;
-    CGFloat h = image.size.height;
+    NSSize pixelSize = [image pixelSize];
+    CGFloat w = pixelSize.width;
+    CGFloat h = pixelSize.height;
     if (w > maxSize.width)  { h = h * maxSize.width / w;  w = maxSize.width; }
     if (h > maxSize.height) { w = w * maxSize.height / h; h = maxSize.height; }
+
+    CGFloat x = self.window.frame.origin.x;
+    CGFloat y = self.window.frame.origin.y;
     [[self window] setFrame:NSMakeRect(x, y, w, h) display:YES];
 }
 
