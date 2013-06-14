@@ -18,9 +18,15 @@
 
 - (IBAction)open:(id)sender
 {
-    RFWindowController *windowController = [[RFWindowController alloc] initWithWindowNibName:@"DocumentWindow"];
-    [windowControllers addObject:windowController];
-    [windowController showWindow:self];
+    NSOpenPanel *panel = [NSOpenPanel openPanel];
+    [panel setAllowedFileTypes:@[@"jpg",@"jpeg",@"png",@"gif",@"bmp"]];
+    if([panel runModal] == NSOKButton) {
+        NSURL *fileURL = [[panel URLs] objectAtIndex:0];
+        
+        RFWindowController *windowController = [[RFWindowController alloc] initWithWindowNibName:@"DocumentWindow" initialFileURL:fileURL];
+        [windowControllers addObject:windowController];
+        [windowController showWindow:self];
+    }
 }
 
 - (IBAction)close:(id)sender {

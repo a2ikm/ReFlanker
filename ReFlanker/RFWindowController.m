@@ -14,6 +14,14 @@
 
 @implementation RFWindowController
 
+- (id)initWithWindowNibName:(NSString *)windowNibName initialFileURL:(NSURL *)fileURL
+{
+    if (self = [super initWithWindowNibName:windowNibName]) {
+        initialFileURL = fileURL;
+    }
+    return self;
+}
+
 - (void)windowDidLoad
 {
     [super windowDidLoad];
@@ -21,7 +29,7 @@
     // Init imageView
     [[self imageView] setImageScaling:NSScaleToFit];
     
-    NSImage *image = [[NSImage alloc] initByReferencingFile:@"/path/to/image"];
+    NSImage *image = [[NSImage alloc] initByReferencingURL:initialFileURL];
     [self setImage:image];
 }
 

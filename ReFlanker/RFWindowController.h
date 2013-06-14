@@ -11,7 +11,12 @@
 @class RFWindow;
 
 @interface RFWindowController : NSWindowController
+{
+    NSURL *initialFileURL;
+}
 
 @property (strong) IBOutlet NSImageView *imageView;
+
+- (id)initWithWindowNibName:(NSString *)windowNibName initialFileURL:(NSURL *)fileURL;
 
 @end
