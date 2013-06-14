@@ -9,7 +9,10 @@
 #import "RFWindowController.h"
 
 @interface RFWindowController (PRIVATE)
--(void)setImage:(NSImage *)anImage;
+- (NSURL *)currentImageURL;
+- (void)loadCurrentImage;
+- (void)setImage:(NSImage *)image;
+- (void)reloadFileNames;
 @end
 
 @implementation RFWindowController
@@ -17,7 +20,11 @@
 - (id)initWithWindowNibName:(NSString *)windowNibName initialFileURL:(NSURL *)fileURL
 {
     if (self = [super initWithWindowNibName:windowNibName]) {
-        initialFileURL = fileURL;
+        directoryURL = [fileURL URLByDeletingLastPathComponent];
+        currentFileName = [fileURL lastPathComponent];
+        
+        fileNames = [[NSMutableArray alloc] init];
+        [self reloadFileNames];
     }
     return self;
 }
@@ -27,25 +34,62 @@
     [super windowDidLoad];
     maxSize = self.window.screen.visibleFrame.size;
     
-    // Init imageView
     [[self imageView] setImageScaling:NSScaleToFit];
-    
-    NSImage *image = [[NSImage alloc] initByReferencingURL:initialFileURL];
+    [self loadCurrentImage];
+}
+
+- (IBAction)next:(id)sender
+{
+    NSInteger i = [fileNames indexOfObject:currentFileName] + 1;
+    if (i >= [fileNames count]) i = 0;
+    currentFileName = [fileNames objectAtIndex:i];
+    [self loadCurrentImage];
+}
+
+- (IBAction)previous:(id)sender
+{
+    NSInteger i = [fileNames indexOfObject:currentFileName] - 1;
+    if (i < 0) i = [fileNames count] - 1;
+    currentFileName = [fileNames objectAtIndex:i];
+    [self loadCurrentImage];
+}
+
+- (NSURL *)currentImageURL
+{
+    return [directoryURL URLByAppendingPathComponent:currentFileName];
+}
+
+- (void)loadCurrentImage
+{
+    NSImage *image = [[NSImage alloc] initByReferencingURL: [self currentImageURL]];
     [self setImage:image];
 }
 
-- (void)setImage:(NSImage *)anImage
+- (void)setImage:(NSImage *)image
 {
-    [[self imageView] setImage:anImage];
-    [[self window] setAspectRatio:[anImage size]];
+    [[self imageView] setImage:image];
+    [[self window] setAspectRatio:[image size]];
     
     CGFloat x = self.window.frame.origin.x;
     CGFloat y = self.window.frame.origin.y;
-    CGFloat w = anImage.size.width;
-    CGFloat h = anImage.size.height;
+    CGFloat w = image.size.width;
+    CGFloat h = image.size.height;
     if (w > maxSize.width)  { h = h * maxSize.width / w;  w = maxSize.width; }
     if (h > maxSize.height) { w = w * maxSize.height / h; h = maxSize.height; }
     [[self window] setFrame:NSMakeRect(x, y, w, h) display:YES];
 }
 
+- (void)reloadFileNames
+{
+    NSFileManager *fileManager = [[NSFileManager alloc] init];
+    NSArray *fileURLs = [fileManager contentsOfDirectoryAtURL:directoryURL
+                                   includingPropertiesForKeys:@[]
+                                                      options:NSDirectoryEnumerationSkipsHiddenFiles
+                                                        error:NULL];
+    
+    [fileNames removeAllObjects];
+    for (NSInteger i = 0; i < [fileURLs count]; i++) {
+        [fileNames addObject:[[fileURLs objectAtIndex:i] lastPathComponent]];
+    }
+}
 @end

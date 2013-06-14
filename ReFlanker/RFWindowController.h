@@ -12,12 +12,16 @@
 
 @interface RFWindowController : NSWindowController
 {
-    NSURL *initialFileURL;
+    NSURL *directoryURL;
+    NSString *currentFileName;
+    NSMutableArray *fileNames;
     NSSize maxSize;
 }
 
 @property (strong) IBOutlet NSImageView *imageView;
 
 - (id)initWithWindowNibName:(NSString *)windowNibName initialFileURL:(NSURL *)fileURL;
+- (IBAction)next:(id)sender;
+- (IBAction)previous:(id)sender;
 
 @end
