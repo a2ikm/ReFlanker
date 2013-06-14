@@ -10,12 +10,13 @@
 
 @class RFWindow;
 
-@interface RFWindowController : NSWindowController
+@interface RFWindowController : NSWindowController <NSWindowDelegate>
 {
     NSURL *directoryURL;
     NSString *currentFileName;
     NSMutableArray *fileNames;
     NSSize maxSize;
+    NSUndoManager *undoManager;
 }
 
 @property (strong) IBOutlet NSImageView *imageView;
@@ -25,6 +26,7 @@
 - (IBAction)previous:(id)sender;
 
 - (IBAction)moveToTrash:(id)sender;
+- (void)undoMovingToTrash:(id)dict;
 
 - (NSURL *)currentImageURL;
 

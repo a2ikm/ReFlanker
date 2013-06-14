@@ -12,7 +12,10 @@
 - (void)loadCurrentImage;
 - (void)setImage:(NSImage *)image;
 - (void)reloadFileNames;
+
 - (void)playMoveToTrashSound;
+- (void)playUndoSound;
+- (void)playSound:(NSString *)soundFile;
 @end
 
 @implementation RFWindowController
@@ -25,6 +28,8 @@
         
         fileNames = [[NSMutableArray alloc] init];
         [self reloadFileNames];
+        
+        undoManager = [[NSUndoManager alloc] init];
     }
     return self;
 }
@@ -61,8 +66,26 @@
     BOOL result = [fileManager trashItemAtURL:[self currentImageURL] resultingItemURL:&movedURL error:NULL];
     if (result) {
         [self playMoveToTrashSound];
+        
+        NSDictionary *dict = @{ @"movedURL":movedURL, @"originalURL":[self currentImageURL] };
+        [undoManager registerUndoWithTarget:self selector:@selector(undoMovingToTrash:) object:dict];
+        
         [self next:nil];
         [self reloadFileNames];
+    }
+}
+
+- (void)undoMovingToTrash:(id)dict
+{
+    NSFileManager *fileManager = [[NSFileManager alloc] init];
+    BOOL result = [fileManager moveItemAtURL:[(NSDictionary* )dict objectForKey:@"movedURL"]
+                                       toURL:[(NSDictionary* )dict objectForKey:@"originalURL"]
+                                       error:NULL];
+    if (result) {
+        [self playUndoSound];
+        [self reloadFileNames];
+    } else {
+        NSBeep();
     }
 }
 
@@ -107,9 +130,24 @@
 
 - (void)playMoveToTrashSound
 {
-    NSSound *systemSound = [[NSSound alloc] initWithContentsOfFile:@"/System/Library/Components/CoreAudio.component/Contents/SharedSupport/SystemSounds/dock/drag to trash.aif" byReference:YES];
+    [self playSound:@"/System/Library/Components/CoreAudio.component/Contents/SharedSupport/SystemSounds/dock/drag to trash.aif"];
+}
+
+- (void)playUndoSound
+{
+    [self playSound:@"/System/Library/Components/CoreAudio.component/Contents/SharedSupport/SystemSounds/system/Volume Mount.aif"];
+}
+
+- (void)playSound:(NSString *)soundFile
+{
+    NSSound *systemSound = [[NSSound alloc] initWithContentsOfFile:soundFile byReference:YES];
     if (systemSound) {
         [systemSound play];
     }
+}
+
+- (NSUndoManager *)windowWillReturnUndoManager:(NSWindow *)aWindow
+{
+    return undoManager;
 }
 @end
