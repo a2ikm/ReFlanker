@@ -8,11 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 
-@class RFWindow;
+@interface RFAppDelegate : NSObject <NSApplicationDelegate> {
+    NSMutableArray *windowControllers;
+}
 
-@interface RFAppDelegate : NSObject <NSApplicationDelegate>
-
-@property (assign) IBOutlet RFWindow *window;
-@property (assign) IBOutlet NSImageView *imageView;
+- (IBAction)open:(id)sender;
+- (IBAction)close:(id)sender;
 
 @end

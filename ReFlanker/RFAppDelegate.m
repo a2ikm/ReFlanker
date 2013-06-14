@@ -8,22 +8,23 @@
 
 #import "RFAppDelegate.h"
 #import "RFWindow.h"
+#import "RFWindowController.h"
 
 @implementation RFAppDelegate
 
-- (void)setImage:(NSImage *)anImage
-{
-    [[self imageView] setImage:anImage];
-    [[self window] setAspectRatio:[anImage size]];
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    windowControllers = [[NSMutableArray alloc] init];
 }
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
+- (IBAction)open:(id)sender
 {
-    // Init imageView
-    [[self imageView] setImageScaling:NSScaleToFit];
-    
-    NSImage *image = [[NSImage alloc] initByReferencingFile:@"/path/to/image"];
-    [self setImage: image];
+    RFWindowController *windowController = [[RFWindowController alloc] initWithWindowNibName:@"DocumentWindow"];
+    [windowControllers addObject:windowController];
+    [windowController showWindow:self];
+}
+
+- (IBAction)close:(id)sender {
+    [[[NSApp keyWindow] windowController] close];
 }
 
 @end
