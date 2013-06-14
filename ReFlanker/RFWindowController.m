@@ -12,6 +12,7 @@
 - (void)loadCurrentImage;
 - (void)setImage:(NSImage *)image;
 - (void)reloadFileNames;
+- (void)playMoveToTrashSound;
 @end
 
 @implementation RFWindowController
@@ -53,6 +54,18 @@
     [self loadCurrentImage];
 }
 
+- (IBAction)moveToTrash:(id)sender
+{
+    NSURL *movedURL = nil;
+    NSFileManager *fileManager = [[NSFileManager alloc] init];
+    BOOL result = [fileManager trashItemAtURL:[self currentImageURL] resultingItemURL:&movedURL error:NULL];
+    if (result) {
+        [self playMoveToTrashSound];
+        [self next:nil];
+        [self reloadFileNames];
+    }
+}
+
 - (NSURL *)currentImageURL
 {
     return [directoryURL URLByAppendingPathComponent:currentFileName];
@@ -89,6 +102,14 @@
     [fileNames removeAllObjects];
     for (NSInteger i = 0; i < [fileURLs count]; i++) {
         [fileNames addObject:[[fileURLs objectAtIndex:i] lastPathComponent]];
+    }
+}
+
+- (void)playMoveToTrashSound
+{
+    NSSound *systemSound = [[NSSound alloc] initWithContentsOfFile:@"/System/Library/Components/CoreAudio.component/Contents/SharedSupport/SystemSounds/dock/drag to trash.aif" byReference:YES];
+    if (systemSound) {
+        [systemSound play];
     }
 }
 @end

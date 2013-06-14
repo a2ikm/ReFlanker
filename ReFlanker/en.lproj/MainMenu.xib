@@ -215,7 +215,7 @@
 										<string key="NSName">_NSRecentDocumentsMenu</string>
 									</object>
 								</object>
-								<object class="NSMenuItem" id="270753258">
+								<object class="NSMenuItem" id="1039126703">
 									<reference key="NSMenu" ref="720053764"/>
 									<string key="NSTitle">Duplicate Window</string>
 									<string key="NSKeyEquiv">d</string>
@@ -239,6 +239,15 @@
 									<reference key="NSMenu" ref="720053764"/>
 									<string key="NSTitle">Close</string>
 									<string key="NSKeyEquiv">w</string>
+									<int key="NSKeyEquivModMask">1048576</int>
+									<int key="NSMnemonicLoc">2147483647</int>
+									<reference key="NSOnImage" ref="35465992"/>
+									<reference key="NSMixedImage" ref="502551668"/>
+								</object>
+								<object class="NSMenuItem" id="335296774">
+									<reference key="NSMenu" ref="720053764"/>
+									<string key="NSTitle">Move to Trash</string>
+									<string type="base64-UTF8" key="NSKeyEquiv">CA</string>
 									<int key="NSKeyEquivModMask">1048576</int>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="35465992"/>
@@ -288,7 +297,7 @@
 									<reference key="NSOnImage" ref="35465992"/>
 									<reference key="NSMixedImage" ref="502551668"/>
 								</object>
-								<object class="NSMenuItem" id="519065535">
+								<object class="NSMenuItem" id="769360734">
 									<reference key="NSMenu" ref="789758025"/>
 									<string key="NSTitle">Previous</string>
 									<string key="NSKeyEquiv"></string>
@@ -296,7 +305,7 @@
 									<reference key="NSOnImage" ref="35465992"/>
 									<reference key="NSMixedImage" ref="502551668"/>
 								</object>
-								<object class="NSMenuItem" id="432282046">
+								<object class="NSMenuItem" id="832538349">
 									<reference key="NSMenu" ref="789758025"/>
 									<string key="NSTitle">Next</string>
 									<string key="NSKeyEquiv"></string>
@@ -1263,7 +1272,7 @@
 					<object class="IBActionConnection" key="connection">
 						<string key="label">previous:</string>
 						<reference key="source" ref="1014"/>
-						<reference key="destination" ref="519065535"/>
+						<reference key="destination" ref="769360734"/>
 					</object>
 					<int key="connectionID">586</int>
 				</object>
@@ -1271,9 +1280,17 @@
 					<object class="IBActionConnection" key="connection">
 						<string key="label">next:</string>
 						<reference key="source" ref="1014"/>
-						<reference key="destination" ref="432282046"/>
+						<reference key="destination" ref="832538349"/>
 					</object>
 					<int key="connectionID">587</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">moveToTrash:</string>
+						<reference key="source" ref="1014"/>
+						<reference key="destination" ref="335296774"/>
+					</object>
+					<int key="connectionID">591</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
@@ -1335,7 +1352,7 @@
 					<object class="IBActionConnection" key="connection">
 						<string key="label">duplicate:</string>
 						<reference key="source" ref="976324537"/>
-						<reference key="destination" ref="270753258"/>
+						<reference key="destination" ref="1039126703"/>
 					</object>
 					<int key="connectionID">589</int>
 				</object>
@@ -1420,7 +1437,8 @@
 							<reference ref="1025936716"/>
 							<reference ref="776162233"/>
 							<reference ref="425164168"/>
-							<reference ref="270753258"/>
+							<reference ref="1039126703"/>
+							<reference ref="335296774"/>
 						</array>
 						<reference key="parent" ref="379814623"/>
 					</object>
@@ -1467,8 +1485,8 @@
 							<reference ref="1058277027"/>
 							<reference ref="1040322652"/>
 							<reference ref="790794224"/>
-							<reference ref="519065535"/>
-							<reference ref="432282046"/>
+							<reference ref="769360734"/>
+							<reference ref="832538349"/>
 						</array>
 						<reference key="parent" ref="952259628"/>
 					</object>
@@ -2028,17 +2046,22 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">584</int>
-						<reference key="object" ref="519065535"/>
+						<reference key="object" ref="769360734"/>
 						<reference key="parent" ref="789758025"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">585</int>
-						<reference key="object" ref="432282046"/>
+						<reference key="object" ref="832538349"/>
 						<reference key="parent" ref="789758025"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">588</int>
-						<reference key="object" ref="270753258"/>
+						<reference key="object" ref="1039126703"/>
+						<reference key="parent" ref="720053764"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">590</int>
+						<reference key="object" ref="335296774"/>
 						<reference key="parent" ref="720053764"/>
 					</object>
 				</array>
@@ -2144,6 +2167,7 @@
 				<string key="584.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="585.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="588.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="590.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="72.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="73.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="79.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -2155,7 +2179,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">589</int>
+			<int key="maxID">591</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -2190,10 +2214,15 @@
 					<string key="className">RFWindowController</string>
 					<string key="superclassName">NSWindowController</string>
 					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="moveToTrash:">id</string>
 						<string key="next:">id</string>
 						<string key="previous:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="moveToTrash:">
+							<string key="name">moveToTrash:</string>
+							<string key="candidateClassName">id</string>
+						</object>
 						<object class="IBActionInfo" key="next:">
 							<string key="name">next:</string>
 							<string key="candidateClassName">id</string>

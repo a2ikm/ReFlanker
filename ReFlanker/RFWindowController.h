@@ -24,6 +24,8 @@
 - (IBAction)next:(id)sender;
 - (IBAction)previous:(id)sender;
 
+- (IBAction)moveToTrash:(id)sender;
+
 - (NSURL *)currentImageURL;
 
 @end
