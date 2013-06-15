@@ -23,7 +23,7 @@
 - (IBAction)open:(id)sender
 {
     NSOpenPanel *panel = [NSOpenPanel openPanel];
-    [panel setAllowedFileTypes:@[@"jpg",@"jpeg",@"png",@"gif",@"bmp"]];
+    [panel setAllowedFileTypes:ALLOWED_FILE_TYPES];
     if([panel runModal] == NSOKButton) {
         NSURL *fileURL = [[panel URLs] objectAtIndex:0];
         [self openNewWindow:fileURL];

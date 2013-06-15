@@ -13,6 +13,7 @@
 - (void)loadCurrentImage;
 - (void)setImage:(NSImage *)image;
 - (void)reloadFileNames;
+- (BOOL)isAllowedFile:(NSString *)fileName;
 
 - (void)playMoveToTrashSound;
 - (void)playUndoSound;
@@ -127,8 +128,19 @@
     
     [fileNames removeAllObjects];
     for (NSInteger i = 0; i < [fileURLs count]; i++) {
-        [fileNames addObject:[[fileURLs objectAtIndex:i] lastPathComponent]];
+        NSString *fileName = [[fileURLs objectAtIndex:i] lastPathComponent];
+        if ([self isAllowedFile:fileName]) [fileNames addObject:fileName];
     }
+}
+             
+- (BOOL)isAllowedFile:(NSString *)fileName
+{
+    for(NSInteger i = 0; i < [ALLOWED_FILE_TYPES count]; i++) {
+        if ([[fileName lowercaseString] hasSuffix:[[ALLOWED_FILE_TYPES objectAtIndex:i] lowercaseString]]) {
+            return YES;
+        }
+    }
+    return NO;
 }
 
 - (void)playMoveToTrashSound
