@@ -11,7 +11,6 @@
 
 @interface RFWindowController (PRIVATE)
 - (void)loadCurrentImage;
-- (void)setImage:(NSImage *)image;
 - (void)reloadFileNames;
 - (BOOL)isAllowedFile:(NSString *)fileName;
 
@@ -99,15 +98,11 @@
 - (void)loadCurrentImage
 {
     NSImage *image = [[NSImage alloc] initByReferencingURL: [self currentImageURL]];
-    [self setImage:image];
-}
-
-- (void)setImage:(NSImage *)image
-{
     [[self imageView] setImage:image];
-    [[self window] setAspectRatio:[image size]];
     
     NSSize pixelSize = [image pixelSize];
+    [[self window] setAspectRatio:pixelSize];
+    
     CGFloat w = pixelSize.width;
     CGFloat h = pixelSize.height;
     if (w > maxSize.width)  { h = h * maxSize.width / w;  w = maxSize.width; }
