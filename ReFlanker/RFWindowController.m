@@ -149,6 +149,11 @@
     }
 }
 
+- (void)windowDidBecomeKey:(NSNotification *)notification
+{
+    [self reloadFileNames];
+}
+
 - (NSUndoManager *)windowWillReturnUndoManager:(NSWindow *)aWindow
 {
     return undoManager;
