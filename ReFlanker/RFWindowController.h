@@ -28,6 +28,8 @@
 - (IBAction)moveToTrash:(id)sender;
 - (void)undoMovingToTrash:(id)dict;
 
+- (IBAction)minimize:(id)sender;
+
 - (NSURL *)currentImageURL;
 
 @end

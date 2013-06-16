@@ -90,6 +90,11 @@
     }
 }
 
+- (IBAction)minimize:(id)sender
+{
+    [[self window] miniaturize:sender];
+}
+
 - (NSURL *)currentImageURL
 {
     return [directoryURL URLByAppendingPathComponent:currentFileName];
