@@ -29,6 +29,7 @@
 - (void)undoMovingToTrash:(id)dict;
 
 - (IBAction)showInFinder:(id)sender;
+- (IBAction)showTitleViaNotificationCenter:(id)sender;
 
 - (IBAction)minimize:(id)sender;
 

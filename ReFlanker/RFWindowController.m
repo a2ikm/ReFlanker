@@ -94,6 +94,16 @@
     [[NSWorkspace sharedWorkspace] activateFileViewerSelectingURLs:fileURLs];
 }
 
+- (IBAction)showTitleViaNotificationCenter:(id)sender
+{
+    NSUserNotification *notification = [[NSUserNotification alloc] init];
+    notification.title = currentFileName;
+    notification.informativeText = [NSString stringWithFormat:@"Stored in %@", [directoryURL path]];
+    notification.hasActionButton = NO;
+    
+    [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
+}
+
 - (IBAction)minimize:(id)sender
 {
     [[self window] miniaturize:sender];

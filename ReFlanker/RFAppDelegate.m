@@ -20,6 +20,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     windowControllers = [[NSMutableArray alloc] init];
+    [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
 }
 
 - (IBAction)open:(id)sender
@@ -68,6 +69,19 @@
 - (RFWindowController *)currentWindowController
 {
     return (RFWindowController *)[[NSApp keyWindow] windowController];
+}
+
+#pragma mark --- NSUserNotificationCenterDelegate
+
+
+- (BOOL)userNotificationCenter:(NSUserNotificationCenter *)center shouldPresentNotification:(NSUserNotification *)notification
+{
+    return YES;
+}
+
+- (void)userNotificationCenter:(NSUserNotificationCenter *)center didDeliverNotification:(NSUserNotification *)notification
+{
+    [center removeDeliveredNotification:notification];
 }
 
 @end

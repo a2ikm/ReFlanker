@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface RFAppDelegate : NSObject <NSApplicationDelegate> {
+@interface RFAppDelegate : NSObject <NSApplicationDelegate,NSUserNotificationCenterDelegate> {
     NSMutableArray *windowControllers;
 }
 
