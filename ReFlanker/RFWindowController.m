@@ -88,6 +88,12 @@
     }
 }
 
+- (IBAction)showInFinder:(id)sender
+{
+    NSArray *fileURLs = @[[self currentImageURL]];
+    [[NSWorkspace sharedWorkspace] activateFileViewerSelectingURLs:fileURLs];
+}
+
 - (IBAction)minimize:(id)sender
 {
     [[self window] miniaturize:sender];

@@ -224,6 +224,15 @@
 									<reference key="NSOnImage" ref="35465992"/>
 									<reference key="NSMixedImage" ref="502551668"/>
 								</object>
+								<object class="NSMenuItem" id="248981000">
+									<reference key="NSMenu" ref="720053764"/>
+									<string key="NSTitle">Show in Finder</string>
+									<string key="NSKeyEquiv">f</string>
+									<int key="NSKeyEquivModMask">1048576</int>
+									<int key="NSMnemonicLoc">2147483647</int>
+									<reference key="NSOnImage" ref="35465992"/>
+									<reference key="NSMixedImage" ref="502551668"/>
+								</object>
 								<object class="NSMenuItem" id="425164168">
 									<reference key="NSMenu" ref="720053764"/>
 									<bool key="NSIsDisabled">YES</bool>
@@ -867,7 +876,7 @@
 									<reference key="NSOnImage" ref="35465992"/>
 									<reference key="NSMixedImage" ref="502551668"/>
 								</object>
-								<object class="NSMenuItem" id="14733968">
+								<object class="NSMenuItem" id="75186335">
 									<reference key="NSMenu" ref="835318025"/>
 									<string key="NSTitle">Previous Window</string>
 									<string key="NSKeyEquiv"></string>
@@ -876,7 +885,7 @@
 									<reference key="NSOnImage" ref="35465992"/>
 									<reference key="NSMixedImage" ref="502551668"/>
 								</object>
-								<object class="NSMenuItem" id="129203312">
+								<object class="NSMenuItem" id="957050620">
 									<reference key="NSMenu" ref="835318025"/>
 									<string key="NSTitle">Next Window</string>
 									<string key="NSKeyEquiv"></string>
@@ -1312,6 +1321,14 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
+						<string key="label">showInFinder:</string>
+						<reference key="source" ref="1014"/>
+						<reference key="destination" ref="248981000"/>
+					</object>
+					<int key="connectionID">602</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
 						<string key="label">addFontTrait:</string>
 						<reference key="source" ref="755631768"/>
 						<reference key="destination" ref="305399458"/>
@@ -1378,7 +1395,7 @@
 					<object class="IBActionConnection" key="connection">
 						<string key="label">previousWindow:</string>
 						<reference key="source" ref="976324537"/>
-						<reference key="destination" ref="14733968"/>
+						<reference key="destination" ref="75186335"/>
 					</object>
 					<int key="connectionID">599</int>
 				</object>
@@ -1386,7 +1403,7 @@
 					<object class="IBActionConnection" key="connection">
 						<string key="label">nextWindow:</string>
 						<reference key="source" ref="976324537"/>
-						<reference key="destination" ref="129203312"/>
+						<reference key="destination" ref="957050620"/>
 					</object>
 					<int key="connectionID">600</int>
 				</object>
@@ -1473,6 +1490,7 @@
 							<reference ref="425164168"/>
 							<reference ref="1039126703"/>
 							<reference ref="335296774"/>
+							<reference ref="248981000"/>
 						</array>
 						<reference key="parent" ref="379814623"/>
 					</object>
@@ -1628,8 +1646,8 @@
 							<reference ref="625202149"/>
 							<reference ref="575023229"/>
 							<reference ref="1011231497"/>
-							<reference ref="129203312"/>
-							<reference ref="14733968"/>
+							<reference ref="957050620"/>
+							<reference ref="75186335"/>
 						</array>
 						<reference key="parent" ref="713487014"/>
 					</object>
@@ -2102,13 +2120,18 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">597</int>
-						<reference key="object" ref="129203312"/>
+						<reference key="object" ref="957050620"/>
 						<reference key="parent" ref="835318025"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">598</int>
-						<reference key="object" ref="14733968"/>
+						<reference key="object" ref="75186335"/>
 						<reference key="parent" ref="835318025"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">601</int>
+						<reference key="object" ref="248981000"/>
+						<reference key="parent" ref="720053764"/>
 					</object>
 				</array>
 			</object>
@@ -2216,6 +2239,7 @@
 				<string key="590.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="597.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="598.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="601.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="72.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="73.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="79.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -2227,7 +2251,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">600</int>
+			<int key="maxID">602</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -2276,6 +2300,7 @@
 						<string key="moveToTrash:">id</string>
 						<string key="next:">id</string>
 						<string key="previous:">id</string>
+						<string key="showInFinder:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="minimize:">
@@ -2292,6 +2317,10 @@
 						</object>
 						<object class="IBActionInfo" key="previous:">
 							<string key="name">previous:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="showInFinder:">
+							<string key="name">showInFinder:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 					</dictionary>
