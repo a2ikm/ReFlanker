@@ -12,6 +12,7 @@
 
 @interface RFAppDelegate (PRIVATE)
 - (void)openNewWindow:(NSURL *)fileURL;
+- (RFWindowController *)currentWindowController;
 @end
 
 @implementation RFAppDelegate
@@ -31,7 +32,7 @@
 }
 
 - (IBAction)close:(id)sender {
-    RFWindowController *windowController = (RFWindowController *)[[NSApp keyWindow] windowController];
+    RFWindowController *windowController = [self currentWindowController];
     [windowControllers removeObject:windowController];
     [windowController close];
 }
@@ -42,11 +43,18 @@
     [self openNewWindow:fileURL];
 }
 
+#pragma mark --- PRIVATE ---
+
 - (void)openNewWindow:(NSURL *)fileURL
 {
     RFWindowController *windowController = [[RFWindowController alloc] initWithWindowNibName:@"DocumentWindow" initialFileURL:fileURL];
     [windowControllers addObject:windowController];
     [windowController showWindow:self];
+}
+
+- (RFWindowController *)currentWindowController
+{
+    return (RFWindowController *)[[NSApp keyWindow] windowController];
 }
 
 @end
