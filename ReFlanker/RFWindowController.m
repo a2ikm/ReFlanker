@@ -11,6 +11,7 @@
 #import "NSImage+PixelSize.h"
 
 @interface RFWindowController (PRIVATE)
+- (void)updateWindowAndImageView;
 - (void)loadCurrentImage;
 - (void)reloadFileNames;
 - (BOOL)isAllowedFile:(NSString *)fileName;
@@ -42,19 +43,19 @@
     maxSize = self.window.screen.visibleFrame.size;
     
     [[self imageView] setImageScaling:NSScaleToFit];
-    [self loadCurrentImage];
+    [self updateWindowAndImageView];
 }
 
 - (IBAction)next:(id)sender
 {
     currentFileName = [fileNames nextObjectOf:currentFileName];
-    [self loadCurrentImage];
+    [self updateWindowAndImageView];
 }
 
 - (IBAction)previous:(id)sender
 {
     currentFileName = [fileNames previousObjectOf:currentFileName];
-    [self loadCurrentImage];
+    [self updateWindowAndImageView];
 }
 
 - (IBAction)moveToTrash:(id)sender
@@ -95,6 +96,16 @@
 - (NSURL *)currentImageURL
 {
     return [directoryURL URLByAppendingPathComponent:currentFileName];
+}
+
+#pragma mark --- PRIVATE ---
+
+- (void)updateWindowAndImageView
+{
+    NSString *title = [[directoryURL lastPathComponent] stringByAppendingPathComponent:currentFileName];
+    [[self window] setTitle:title];
+    
+    [self loadCurrentImage];
 }
 
 - (void)loadCurrentImage
@@ -157,6 +168,8 @@
         [systemSound play];
     }
 }
+
+#pragma mark --- NSWindowDelegate --
 
 - (void)windowDidBecomeKey:(NSNotification *)notification
 {
