@@ -16,4 +16,7 @@
 - (IBAction)close:(id)sender;
 - (IBAction)duplicate:(id)sender;
 
+- (IBAction)nextWindow:(id)sender;
+- (IBAction)previousWindow:(id)sender;
+
 @end

@@ -9,6 +9,7 @@
 #import "RFAppDelegate.h"
 #import "RFWindow.h"
 #import "RFWindowController.h"
+#import "NSArray+Ring.h"
 
 @interface RFAppDelegate (PRIVATE)
 - (void)openNewWindow:(NSURL *)fileURL;
@@ -41,6 +42,18 @@
 {
     NSURL *fileURL = [[[NSApp keyWindow] windowController] currentImageURL];
     [self openNewWindow:fileURL];
+}
+
+- (IBAction)nextWindow:(id)sender
+{
+    RFWindowController *windowController = [windowControllers nextObjectOf:[self currentWindowController]];
+    [[windowController window] makeKeyAndOrderFront:sender];
+}
+
+- (IBAction)previousWindow:(id)sender
+{
+    RFWindowController *windowController = [windowControllers previousObjectOf:[self currentWindowController]];
+    [[windowController window] makeKeyAndOrderFront:sender];
 }
 
 #pragma mark --- PRIVATE ---
