@@ -31,7 +31,9 @@
 }
 
 - (IBAction)close:(id)sender {
-    [[[NSApp keyWindow] windowController] close];
+    RFWindowController *windowController = (RFWindowController *)[[NSApp keyWindow] windowController];
+    [windowControllers removeObject:windowController];
+    [windowController close];
 }
 
 - (IBAction)duplicate:(id)sender
