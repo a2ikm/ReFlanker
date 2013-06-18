@@ -19,6 +19,7 @@
 		D609D926176B743D00520535 /* ReFlankerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D609D925176B743D00520535 /* ReFlankerTests.m */; };
 		D609D935176B7AE100520535 /* RFWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = D609D934176B7AE100520535 /* RFWindow.m */; };
 		D609D936176B7AE100520535 /* RFWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = D609D934176B7AE100520535 /* RFWindow.m */; };
+		D6143DD31770F14000D73C0E /* NSArray+Ring.m in Sources */ = {isa = PBXBuildFile; fileRef = D6143DD21770F14000D73C0E /* NSArray+Ring.m */; };
 		D633B024176B8AFC00E09476 /* DocumentWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = D633B022176B8AFC00E09476 /* DocumentWindow.xib */; };
 		D633B027176B8B4300E09476 /* RFWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = D633B026176B8B4300E09476 /* RFWindowController.m */; };
 		D6967A2E176BD7EE00B005A5 /* NSImage+PixelSize.m in Sources */ = {isa = PBXBuildFile; fileRef = D6967A2D176BD7EE00B005A5 /* NSImage+PixelSize.m */; };
@@ -56,6 +57,8 @@
 		D609D925176B743D00520535 /* ReFlankerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReFlankerTests.m; sourceTree = "<group>"; };
 		D609D933176B7AE100520535 /* RFWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFWindow.h; sourceTree = "<group>"; };
 		D609D934176B7AE100520535 /* RFWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFWindow.m; sourceTree = "<group>"; };
+		D6143DD11770F14000D73C0E /* NSArray+Ring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Ring.h"; sourceTree = "<group>"; };
+		D6143DD21770F14000D73C0E /* NSArray+Ring.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Ring.m"; sourceTree = "<group>"; };
 		D633B023176B8AFC00E09476 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DocumentWindow.xib; sourceTree = "<group>"; };
 		D633B025176B8B4300E09476 /* RFWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFWindowController.h; sourceTree = "<group>"; };
 		D633B026176B8B4300E09476 /* RFWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFWindowController.m; sourceTree = "<group>"; };
@@ -132,6 +135,8 @@
 				D609D934176B7AE100520535 /* RFWindow.m */,
 				D633B025176B8B4300E09476 /* RFWindowController.h */,
 				D633B026176B8B4300E09476 /* RFWindowController.m */,
+				D6143DD11770F14000D73C0E /* NSArray+Ring.h */,
+				D6143DD21770F14000D73C0E /* NSArray+Ring.m */,
 				D6967A2C176BD7EE00B005A5 /* NSImage+PixelSize.h */,
 				D6967A2D176BD7EE00B005A5 /* NSImage+PixelSize.m */,
 				D633B022176B8AFC00E09476 /* DocumentWindow.xib */,
@@ -287,6 +292,7 @@
 				D609D935176B7AE100520535 /* RFWindow.m in Sources */,
 				D633B027176B8B4300E09476 /* RFWindowController.m in Sources */,
 				D6967A2E176BD7EE00B005A5 /* NSImage+PixelSize.m in Sources */,
+				D6143DD31770F14000D73C0E /* NSArray+Ring.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

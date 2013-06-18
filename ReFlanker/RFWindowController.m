@@ -7,6 +7,7 @@
 //
 
 #import "RFWindowController.h"
+#import "NSArray+Ring.h"
 #import "NSImage+PixelSize.h"
 
 @interface RFWindowController (PRIVATE)
@@ -46,17 +47,13 @@
 
 - (IBAction)next:(id)sender
 {
-    NSInteger i = [fileNames indexOfObject:currentFileName] + 1;
-    if (i >= [fileNames count]) i = 0;
-    currentFileName = [fileNames objectAtIndex:i];
+    currentFileName = [fileNames nextObjectOf:currentFileName];
     [self loadCurrentImage];
 }
 
 - (IBAction)previous:(id)sender
 {
-    NSInteger i = [fileNames indexOfObject:currentFileName] - 1;
-    if (i < 0) i = [fileNames count] - 1;
-    currentFileName = [fileNames objectAtIndex:i];
+    currentFileName = [fileNames previousObjectOf:currentFileName];
     [self loadCurrentImage];
 }
 
