@@ -71,7 +71,16 @@
     return (RFWindowController *)[[NSApp keyWindow] windowController];
 }
 
-#pragma mark --- NSUserNotificationCenterDelegate
+#pragma mark --- NSApplicationDelegate ---
+
+- (BOOL)application:(NSApplication *)theApplication openFile:(NSString *)filename
+{
+    NSURL *fileURL = [NSURL fileURLWithPath:filename];
+    [self openNewWindow:fileURL];
+    return YES;
+}
+
+#pragma mark --- NSUserNotificationCenterDelegate ---
 
 
 - (BOOL)userNotificationCenter:(NSUserNotificationCenter *)center shouldPresentNotification:(NSUserNotification *)notification
