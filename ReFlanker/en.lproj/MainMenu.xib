@@ -492,6 +492,14 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
+						<string key="label">duplicate:</string>
+						<reference key="source" ref="1014"/>
+						<reference key="destination" ref="1039126703"/>
+					</object>
+					<int key="connectionID">662</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
 						<string key="label">open:</string>
 						<reference key="source" ref="976324537"/>
 						<reference key="destination" ref="722745758"/>
@@ -505,14 +513,6 @@
 						<reference key="destination" ref="776162233"/>
 					</object>
 					<int key="connectionID">565</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">duplicate:</string>
-						<reference key="source" ref="976324537"/>
-						<reference key="destination" ref="1039126703"/>
-					</object>
-					<int key="connectionID">589</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
@@ -888,7 +888,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">661</int>
+			<int key="maxID">662</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -938,6 +938,7 @@
 					<string key="className">RFWindowController</string>
 					<string key="superclassName">NSWindowController</string>
 					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="duplicate:">id</string>
 						<string key="minimize:">id</string>
 						<string key="moveToTrash:">id</string>
 						<string key="next:">id</string>
@@ -946,6 +947,10 @@
 						<string key="showTitleViaNotificationCenter:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="duplicate:">
+							<string key="name">duplicate:</string>
+							<string key="candidateClassName">id</string>
+						</object>
 						<object class="IBActionInfo" key="minimize:">
 							<string key="name">minimize:</string>
 							<string key="candidateClassName">id</string>

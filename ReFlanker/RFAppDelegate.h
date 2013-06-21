@@ -17,11 +17,11 @@
 
 - (IBAction)open:(id)sender;
 - (IBAction)close:(id)sender;
-- (IBAction)duplicate:(id)sender;
 
 - (IBAction)nextWindow:(id)sender;
 - (IBAction)previousWindow:(id)sender;
 
 - (NSArray *)allowedFileTypes;
+- (void)openNewWindowWithInitialFileURL:(NSURL *)fileURL;
 
 @end

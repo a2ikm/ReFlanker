@@ -6,6 +6,7 @@
 //  Copyright (c) 2013年 Aerialarts. All rights reserved.
 //
 
+#import "RFAppDelegate.h"
 #import "RFWindowController.h"
 #import "NSArray+Ring.h"
 #import "NSImage+PixelSize.h"
@@ -44,6 +45,11 @@
     
     [[self imageView] setImageScaling:NSScaleToFit];
     [self updateWindowAndImageView];
+}
+
+- (IBAction)duplicate:(id)sender
+{
+    [APP_DELEGATE openNewWindowWithInitialFileURL:[self currentImageURL]];
 }
 
 - (IBAction)next:(id)sender

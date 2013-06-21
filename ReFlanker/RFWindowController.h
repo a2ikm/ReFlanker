@@ -22,6 +22,8 @@
 @property (strong) IBOutlet NSImageView *imageView;
 
 - (id)initWithInitialFileURL:(NSURL *)fileURL;
+- (IBAction)duplicate:(id)sender;
+
 - (IBAction)next:(id)sender;
 - (IBAction)previous:(id)sender;
 

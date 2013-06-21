@@ -7,3 +7,4 @@
 #endif
 
 #define ALLOWED_FILE_TYPES [[NSApp delegate] allowedFileTypes]
+#define APP_DELEGATE [NSApp delegate]

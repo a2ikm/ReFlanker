@@ -13,7 +13,6 @@
 #import "NSArray+Ring.h"
 
 @interface RFAppDelegate (PRIVATE)
-- (void)openNewWindow:(NSURL *)fileURL;
 - (RFWindowController *)currentWindowController;
 @end
 
@@ -30,7 +29,7 @@
     [panel setAllowedFileTypes:ALLOWED_FILE_TYPES];
     if([panel runModal] == NSOKButton) {
         NSURL *fileURL = [[panel URLs] objectAtIndex:0];
-        [self openNewWindow:fileURL];
+        [self openNewWindowWithInitialFileURL:fileURL];
     }
 }
 
@@ -38,12 +37,6 @@
     RFWindowController *windowController = [self currentWindowController];
     [windowControllers removeObject:windowController];
     [windowController close];
-}
-
-- (IBAction)duplicate:(id)sender
-{
-    NSURL *fileURL = [[self currentWindowController] currentImageURL];
-    [self openNewWindow:fileURL];
 }
 
 - (IBAction)nextWindow:(id)sender
@@ -63,14 +56,14 @@
     return _allowedFileTypes;
 }
 
-#pragma mark --- PRIVATE ---
-
-- (void)openNewWindow:(NSURL *)fileURL
+- (void)openNewWindowWithInitialFileURL:(NSURL *)fileURL
 {
     RFWindowController *windowController = [[RFWindowController alloc] initWithInitialFileURL:fileURL];
     [windowControllers addObject:windowController];
     [windowController showWindow:self];
 }
+
+#pragma mark --- PRIVATE ---
 
 - (RFWindowController *)currentWindowController
 {
@@ -97,7 +90,7 @@
 - (BOOL)application:(NSApplication *)theApplication openFile:(NSString *)filename
 {
     NSURL *fileURL = [NSURL fileURLWithPath:filename];
-    [self openNewWindow:fileURL];
+    [self openNewWindowWithInitialFileURL:fileURL];
     return YES;
 }
 
