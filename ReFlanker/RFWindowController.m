@@ -116,6 +116,23 @@
     }
 }
 
+- (IBAction)copy:(id)sender
+{
+    NSSavePanel *savePanel = [NSSavePanel savePanel];
+    [savePanel setNameFieldLabel:@"Copy to:"];
+    [savePanel setNameFieldStringValue:currentFileName];
+    if ([savePanel runModal] == NSFileHandlingPanelCancelButton) return;
+    
+    NSURL *copiedURL = [savePanel URL];
+    
+    NSFileManager *fileManager = [[NSFileManager alloc] init];
+    BOOL result = [fileManager copyItemAtURL:[self currentImageURL] toURL:copiedURL error:NULL];
+    if (result) {
+        [self playUndoSound];
+        [self reloadFileNames];
+    }
+}
+
 - (IBAction)showInFinder:(id)sender
 {
     NSArray *fileURLs = @[[self currentImageURL]];

@@ -31,6 +31,8 @@
 - (IBAction)moveToTrash:(id)sender;
 - (void)undoFileMove:(id)dict;
 
+- (IBAction)copy:(id)sender;
+
 - (IBAction)showInFinder:(id)sender;
 - (IBAction)showTitleViaNotificationCenter:(id)sender;
 
