@@ -21,7 +21,7 @@
 
 @property (strong) IBOutlet NSImageView *imageView;
 
-- (id)initWithWindowNibName:(NSString *)windowNibName initialFileURL:(NSURL *)fileURL;
+- (id)initWithInitialFileURL:(NSURL *)fileURL;
 - (IBAction)next:(id)sender;
 - (IBAction)previous:(id)sender;
 

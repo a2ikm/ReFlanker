@@ -67,7 +67,7 @@
 
 - (void)openNewWindow:(NSURL *)fileURL
 {
-    RFWindowController *windowController = [[RFWindowController alloc] initWithWindowNibName:@"DocumentWindow" initialFileURL:fileURL];
+    RFWindowController *windowController = [[RFWindowController alloc] initWithInitialFileURL:fileURL];
     [windowControllers addObject:windowController];
     [windowController showWindow:self];
 }

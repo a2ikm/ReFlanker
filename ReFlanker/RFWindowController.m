@@ -23,9 +23,9 @@
 
 @implementation RFWindowController
 
-- (id)initWithWindowNibName:(NSString *)windowNibName initialFileURL:(NSURL *)fileURL
+- (id)initWithInitialFileURL:(NSURL *)fileURL
 {
-    if (self = [super initWithWindowNibName:windowNibName]) {
+    if (self = [super initWithWindowNibName:@"DocumentWindow"]) {
         directoryURL = [fileURL URLByDeletingLastPathComponent];
         currentFileName = [fileURL lastPathComponent];
         
