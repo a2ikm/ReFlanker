@@ -18,21 +18,6 @@
 
 @implementation RFAppDelegate
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    windowControllers = [[NSMutableArray alloc] init];
-    
-    [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
-    
-    NSMutableArray *array = [[NSMutableArray alloc] init];
-    NSDictionary *infoDict = [[NSBundle mainBundle] infoDictionary];
-    for (NSDictionary *dict in [infoDict objectForKey:@"CFBundleDocumentTypes"]) {
-        for (NSString *extension in [dict objectForKey:@"CFBundleTypeExtensions"]) {
-            [array addObject:extension];
-        }
-    }
-    _allowedFileTypes = [[NSMutableArray alloc] initWithArray:array copyItems:NO];
-}
-
 - (IBAction)open:(id)sender
 {
     NSOpenPanel *panel = [NSOpenPanel openPanel];
@@ -87,6 +72,21 @@
 }
 
 #pragma mark --- NSApplicationDelegate ---
+
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    windowControllers = [[NSMutableArray alloc] init];
+    
+    [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
+    
+    NSMutableArray *array = [[NSMutableArray alloc] init];
+    NSDictionary *infoDict = [[NSBundle mainBundle] infoDictionary];
+    for (NSDictionary *dict in [infoDict objectForKey:@"CFBundleDocumentTypes"]) {
+        for (NSString *extension in [dict objectForKey:@"CFBundleTypeExtensions"]) {
+            [array addObject:extension];
+        }
+    }
+    _allowedFileTypes = [[NSMutableArray alloc] initWithArray:array copyItems:NO];
+}
 
 - (BOOL)application:(NSApplication *)theApplication openFile:(NSString *)filename
 {
