@@ -10,6 +10,7 @@
 
 @interface RFAppDelegate : NSObject <NSApplicationDelegate,NSUserNotificationCenterDelegate> {
     NSMutableArray *windowControllers;
+    NSArray *_allowedFileTypes;
 }
 
 - (IBAction)open:(id)sender;
@@ -18,5 +19,7 @@
 
 - (IBAction)nextWindow:(id)sender;
 - (IBAction)previousWindow:(id)sender;
+
+- (NSArray *)allowedFileTypes;
 
 @end

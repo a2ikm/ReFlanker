@@ -6,4 +6,4 @@
     #import <Cocoa/Cocoa.h>
 #endif
 
-#define ALLOWED_FILE_TYPES @[@"jpg",@"jpeg",@"png",@"gif",@"bmp"]
+#define ALLOWED_FILE_TYPES [[NSApp delegate] allowedFileTypes]
