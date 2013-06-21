@@ -334,6 +334,15 @@
 									<reference key="NSOnImage" ref="35465992"/>
 									<reference key="NSMixedImage" ref="502551668"/>
 								</object>
+								<object class="NSMenuItem" id="722409969">
+									<reference key="NSMenu" ref="134076449"/>
+									<string key="NSTitle">Half Size</string>
+									<string key="NSKeyEquiv">2</string>
+									<int key="NSKeyEquivModMask">1048576</int>
+									<int key="NSMnemonicLoc">2147483647</int>
+									<reference key="NSOnImage" ref="35465992"/>
+									<reference key="NSMixedImage" ref="502551668"/>
+								</object>
 							</array>
 						</object>
 					</object>
@@ -562,6 +571,14 @@
 						<reference key="destination" ref="81965060"/>
 					</object>
 					<int key="connectionID">675</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">resizeToHalfSize:</string>
+						<reference key="source" ref="1014"/>
+						<reference key="destination" ref="722409969"/>
+					</object>
+					<int key="connectionID">677</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
@@ -927,12 +944,18 @@
 						<reference key="object" ref="134076449"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="81965060"/>
+							<reference ref="722409969"/>
 						</array>
 						<reference key="parent" ref="590797965"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">672</int>
 						<reference key="object" ref="81965060"/>
+						<reference key="parent" ref="134076449"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">676</int>
+						<reference key="object" ref="722409969"/>
 						<reference key="parent" ref="134076449"/>
 					</object>
 				</array>
@@ -981,6 +1004,7 @@
 				<string key="667.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="670.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="672.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="676.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="72.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="73.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="79.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -992,7 +1016,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">675</int>
+			<int key="maxID">677</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1045,6 +1069,7 @@
 						<string key="next:">id</string>
 						<string key="previous:">id</string>
 						<string key="resizeToActualSize:">id</string>
+						<string key="resizeToHalfSize:">id</string>
 						<string key="showInFinder:">id</string>
 						<string key="showTitleViaNotificationCenter:">id</string>
 					</dictionary>
@@ -1079,6 +1104,10 @@
 						</object>
 						<object class="IBActionInfo" key="resizeToActualSize:">
 							<string key="name">resizeToActualSize:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="resizeToHalfSize:">
+							<string key="name">resizeToHalfSize:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="showInFinder:">

@@ -160,6 +160,11 @@
     [self resizeToScale:1.0];
 }
 
+- (IBAction)resizeToHalfSize:(id)sender
+{
+    [self resizeToScale:0.5];
+}
+
 - (NSURL *)currentImageURL
 {
     return [directoryURL URLByAppendingPathComponent:currentFileName];
