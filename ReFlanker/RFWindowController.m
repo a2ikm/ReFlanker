@@ -64,6 +64,28 @@
     [self updateWindowAndImageView];
 }
 
+- (IBAction)move:(id)sender
+{
+    NSSavePanel *savePanel = [NSSavePanel savePanel];
+    [savePanel setNameFieldLabel:@"Move to:"];
+    [savePanel setNameFieldStringValue:currentFileName];
+    if ([savePanel runModal] == NSFileHandlingPanelCancelButton) return;
+    
+    NSURL *movedURL = [savePanel URL];
+    
+    NSFileManager *fileManager = [[NSFileManager alloc] init];
+    BOOL result = [fileManager moveItemAtURL:[self currentImageURL] toURL:movedURL error:NULL];
+    if (result) {
+        [self playUndoSound];
+        
+        NSDictionary *dict = @{ @"movedURL":movedURL, @"originalURL":[self currentImageURL] };
+        [undoManager registerUndoWithTarget:self selector:@selector(undoFileMove:) object:dict];
+        
+        [self next:nil];
+        [self reloadFileNames];
+    }
+}
+
 - (IBAction)moveToTrash:(id)sender
 {
     NSURL *movedURL = nil;
@@ -73,14 +95,14 @@
         [self playMoveToTrashSound];
         
         NSDictionary *dict = @{ @"movedURL":movedURL, @"originalURL":[self currentImageURL] };
-        [undoManager registerUndoWithTarget:self selector:@selector(undoMovingToTrash:) object:dict];
+        [undoManager registerUndoWithTarget:self selector:@selector(undoFileMove:) object:dict];
         
         [self next:nil];
         [self reloadFileNames];
     }
 }
 
-- (void)undoMovingToTrash:(id)dict
+- (void)undoFileMove:(id)dict
 {
     NSFileManager *fileManager = [[NSFileManager alloc] init];
     BOOL result = [fileManager moveItemAtURL:[(NSDictionary* )dict objectForKey:@"movedURL"]

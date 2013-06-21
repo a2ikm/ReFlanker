@@ -27,8 +27,9 @@
 - (IBAction)next:(id)sender;
 - (IBAction)previous:(id)sender;
 
+- (IBAction)move:(id)sender;
 - (IBAction)moveToTrash:(id)sender;
-- (void)undoMovingToTrash:(id)dict;
+- (void)undoFileMove:(id)dict;
 
 - (IBAction)showInFinder:(id)sender;
 - (IBAction)showTitleViaNotificationCenter:(id)sender;
