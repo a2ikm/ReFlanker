@@ -6,5 +6,11 @@
     #import <Cocoa/Cocoa.h>
 #endif
 
+#ifdef DEBUG
+    #define DLog(fmt, ...) NSLog((@"[DEBUG] " fmt), ##__VA_ARGS__);
+#else
+    #define DLog(...)
+#endif
+
 #define ALLOWED_FILE_TYPES [[NSApp delegate] allowedFileTypes]
 #define APP_DELEGATE [NSApp delegate]
