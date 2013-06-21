@@ -37,6 +37,8 @@
 
 - (IBAction)minimize:(id)sender;
 
+- (IBAction)resizeToActualSize:(id)sender;
+
 - (NSURL *)currentImageURL;
 
 @end

@@ -17,6 +17,8 @@
 - (void)reloadFileNames;
 - (BOOL)isAllowedFile:(NSString *)fileName;
 
+- (void)resizeToScale:(CGFloat)scale;
+
 - (void)playMoveToTrashSound;
 - (void)playUndoSound;
 - (void)playSound:(NSString *)soundFile;
@@ -153,6 +155,11 @@
     [[self window] miniaturize:sender];
 }
 
+- (IBAction)resizeToActualSize:(id)sender
+{
+    [self resizeToScale:1.0];
+}
+
 - (NSURL *)currentImageURL
 {
     return [directoryURL URLByAppendingPathComponent:currentFileName];
@@ -210,6 +217,16 @@
         }
     }
     return NO;
+}
+
+- (void)resizeToScale:(CGFloat)scale
+{
+    NSSize size = [[[self imageView] image] pixelSize];
+    CGFloat w = size.width  * scale;
+    CGFloat h = size.height * scale;
+    CGFloat x = self.window.frame.origin.x;
+    CGFloat y = self.window.frame.origin.y;
+    [[self window] setFrame:NSMakeRect(x, y, w, h) display:YES];
 }
 
 - (void)playMoveToTrashSound
