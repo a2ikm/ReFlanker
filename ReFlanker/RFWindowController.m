@@ -151,16 +151,16 @@
                                                         error:NULL];
     
     [fileNames removeAllObjects];
-    for (NSInteger i = 0; i < [fileURLs count]; i++) {
-        NSString *fileName = [[fileURLs objectAtIndex:i] lastPathComponent];
+    for (NSURL *fileURL in fileURLs) {
+        NSString *fileName = [fileURL lastPathComponent];
         if ([self isAllowedFile:fileName]) [fileNames addObject:fileName];
     }
 }
              
 - (BOOL)isAllowedFile:(NSString *)fileName
 {
-    for(NSInteger i = 0; i < [ALLOWED_FILE_TYPES count]; i++) {
-        if ([[fileName lowercaseString] hasSuffix:[[ALLOWED_FILE_TYPES objectAtIndex:i] lowercaseString]]) {
+    for (NSString *fileType in ALLOWED_FILE_TYPES) {
+        if ([[fileName lowercaseString] hasSuffix:[fileType lowercaseString]]) {
             return YES;
         }
     }
