@@ -15,7 +15,6 @@
     NSURL *directoryURL;
     NSString *currentFileName;
     NSMutableArray *fileNames;
-    NSSize maxSize;
     NSUndoManager *undoManager;
 }
 

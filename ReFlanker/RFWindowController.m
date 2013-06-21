@@ -41,7 +41,6 @@
 - (void)windowDidLoad
 {
     [super windowDidLoad];
-    maxSize = self.window.screen.visibleFrame.size;
     
     [[self imageView] setImageScaling:NSScaleToFit];
     [self updateWindowAndImageView];
@@ -179,6 +178,7 @@
     
     CGFloat w = pixelSize.width;
     CGFloat h = pixelSize.height;
+    NSSize maxSize = self.window.screen.visibleFrame.size;
     if (w > maxSize.width)  { h = h * maxSize.width / w;  w = maxSize.width; }
     if (h > maxSize.height) { w = w * maxSize.height / h; h = maxSize.height; }
 
