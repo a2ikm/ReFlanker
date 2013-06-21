@@ -9,6 +9,7 @@
 #import "RFAppDelegate.h"
 #import "RFWindow.h"
 #import "RFWindowController.h"
+#import "RFAboutPanelController.h"
 #import "NSArray+Ring.h"
 
 @interface RFAppDelegate (PRIVATE)
@@ -17,6 +18,11 @@
 @end
 
 @implementation RFAppDelegate
+
+- (IBAction)openAbout:(id)sender
+{
+    [[RFAboutPanelController sharedController] showWindow:sender];
+}
 
 - (IBAction)open:(id)sender
 {
@@ -36,7 +42,7 @@
 
 - (IBAction)duplicate:(id)sender
 {
-    NSURL *fileURL = [[[NSApp keyWindow] windowController] currentImageURL];
+    NSURL *fileURL = [[self currentWindowController] currentImageURL];
     [self openNewWindow:fileURL];
 }
 

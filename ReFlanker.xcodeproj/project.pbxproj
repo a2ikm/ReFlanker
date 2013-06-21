@@ -10,7 +10,6 @@
 		D609D8FC176B743C00520535 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D609D8FB176B743C00520535 /* Cocoa.framework */; };
 		D609D906176B743C00520535 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D609D904176B743C00520535 /* InfoPlist.strings */; };
 		D609D908176B743C00520535 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D609D907176B743C00520535 /* main.m */; };
-		D609D90C176B743C00520535 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = D609D90A176B743C00520535 /* Credits.rtf */; };
 		D609D90F176B743C00520535 /* RFAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D609D90E176B743C00520535 /* RFAppDelegate.m */; };
 		D609D912176B743D00520535 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D609D910176B743D00520535 /* MainMenu.xib */; };
 		D609D91A176B743D00520535 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D609D919176B743D00520535 /* SenTestingKit.framework */; };
@@ -23,6 +22,8 @@
 		D633B024176B8AFC00E09476 /* DocumentWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = D633B022176B8AFC00E09476 /* DocumentWindow.xib */; };
 		D633B027176B8B4300E09476 /* RFWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = D633B026176B8B4300E09476 /* RFWindowController.m */; };
 		D6967A2E176BD7EE00B005A5 /* NSImage+PixelSize.m in Sources */ = {isa = PBXBuildFile; fileRef = D6967A2D176BD7EE00B005A5 /* NSImage+PixelSize.m */; };
+		D6BDD1301774BD4A00918BA9 /* AboutPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6BDD12F1774BD4A00918BA9 /* AboutPanel.xib */; };
+		D6BDD1331774BDC800918BA9 /* RFAboutPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BDD1321774BDC800918BA9 /* RFAboutPanelController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +46,6 @@
 		D609D905176B743C00520535 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D609D907176B743C00520535 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D609D909176B743C00520535 /* ReFlanker-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ReFlanker-Prefix.pch"; sourceTree = "<group>"; };
-		D609D90B176B743C00520535 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		D609D90D176B743C00520535 /* RFAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RFAppDelegate.h; sourceTree = "<group>"; };
 		D609D90E176B743C00520535 /* RFAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RFAppDelegate.m; sourceTree = "<group>"; };
 		D609D911176B743D00520535 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -64,6 +64,9 @@
 		D633B026176B8B4300E09476 /* RFWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFWindowController.m; sourceTree = "<group>"; };
 		D6967A2C176BD7EE00B005A5 /* NSImage+PixelSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+PixelSize.h"; sourceTree = "<group>"; };
 		D6967A2D176BD7EE00B005A5 /* NSImage+PixelSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+PixelSize.m"; sourceTree = "<group>"; };
+		D6BDD12F1774BD4A00918BA9 /* AboutPanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AboutPanel.xib; path = ../AboutPanel.xib; sourceTree = "<group>"; };
+		D6BDD1311774BDC800918BA9 /* RFAboutPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFAboutPanelController.h; sourceTree = "<group>"; };
+		D6BDD1321774BDC800918BA9 /* RFAboutPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFAboutPanelController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,12 +138,15 @@
 				D609D934176B7AE100520535 /* RFWindow.m */,
 				D633B025176B8B4300E09476 /* RFWindowController.h */,
 				D633B026176B8B4300E09476 /* RFWindowController.m */,
+				D6BDD1311774BDC800918BA9 /* RFAboutPanelController.h */,
+				D6BDD1321774BDC800918BA9 /* RFAboutPanelController.m */,
 				D6143DD11770F14000D73C0E /* NSArray+Ring.h */,
 				D6143DD21770F14000D73C0E /* NSArray+Ring.m */,
 				D6967A2C176BD7EE00B005A5 /* NSImage+PixelSize.h */,
 				D6967A2D176BD7EE00B005A5 /* NSImage+PixelSize.m */,
 				D633B022176B8AFC00E09476 /* DocumentWindow.xib */,
 				D609D910176B743D00520535 /* MainMenu.xib */,
+				D6BDD12F1774BD4A00918BA9 /* AboutPanel.xib */,
 				D609D902176B743C00520535 /* Supporting Files */,
 			);
 			path = ReFlanker;
@@ -153,7 +159,6 @@
 				D609D904176B743C00520535 /* InfoPlist.strings */,
 				D609D907176B743C00520535 /* main.m */,
 				D609D909176B743C00520535 /* ReFlanker-Prefix.pch */,
-				D609D90A176B743C00520535 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -250,9 +255,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D609D906176B743C00520535 /* InfoPlist.strings in Resources */,
-				D609D90C176B743C00520535 /* Credits.rtf in Resources */,
 				D609D912176B743D00520535 /* MainMenu.xib in Resources */,
 				D633B024176B8AFC00E09476 /* DocumentWindow.xib in Resources */,
+				D6BDD1301774BD4A00918BA9 /* AboutPanel.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +298,7 @@
 				D633B027176B8B4300E09476 /* RFWindowController.m in Sources */,
 				D6967A2E176BD7EE00B005A5 /* NSImage+PixelSize.m in Sources */,
 				D6143DD31770F14000D73C0E /* NSArray+Ring.m in Sources */,
+				D6BDD1331774BDC800918BA9 /* RFAboutPanelController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,14 +328,6 @@
 				D609D905176B743C00520535 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		D609D90A176B743C00520535 /* Credits.rtf */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D609D90B176B743C00520535 /* en */,
-			);
-			name = Credits.rtf;
 			sourceTree = "<group>";
 		};
 		D609D910176B743D00520535 /* MainMenu.xib */ = {
