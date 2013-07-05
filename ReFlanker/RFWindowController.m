@@ -10,6 +10,7 @@
 #import "RFWindowController.h"
 #import "NSArray+Ring.h"
 #import "NSImage+PixelSize.h"
+#import "NSString+NaturalSort.h"
 
 @interface RFWindowController (PRIVATE)
 - (void)updateWindowAndImageView;
@@ -248,13 +249,17 @@
                                                       options:NSDirectoryEnumerationSkipsHiddenFiles
                                                         error:NULL];
     
-    [fileNames removeAllObjects];
+    NSMutableArray *newFileNames = [[NSMutableArray alloc] init];
     for (NSURL *fileURL in fileURLs) {
         NSString *fileName = [fileURL lastPathComponent];
-        if ([self isAllowedFile:fileName]) [fileNames addObject:fileName];
+        if ([self isAllowedFile:fileName]) [newFileNames addObject:fileName];
     }
+    
+    fileNames = [[newFileNames sortedArrayUsingComparator:^(id obj1, id obj2) {
+        return [(NSString *)obj1 naturalCompare:(NSString *)obj2];
+    }] mutableCopy];
 }
-             
+
 - (BOOL)isAllowedFile:(NSString *)fileName
 {
     for (NSString *fileType in ALLOWED_FILE_TYPES) {

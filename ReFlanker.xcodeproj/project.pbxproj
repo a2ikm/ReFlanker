@@ -21,6 +21,8 @@
 		D6143DD31770F14000D73C0E /* NSArray+Ring.m in Sources */ = {isa = PBXBuildFile; fileRef = D6143DD21770F14000D73C0E /* NSArray+Ring.m */; };
 		D633B024176B8AFC00E09476 /* DocumentWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = D633B022176B8AFC00E09476 /* DocumentWindow.xib */; };
 		D633B027176B8B4300E09476 /* RFWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = D633B026176B8B4300E09476 /* RFWindowController.m */; };
+		D65954FA178771CE00606B42 /* strnatcmp.c in Sources */ = {isa = PBXBuildFile; fileRef = D65954F8178771CE00606B42 /* strnatcmp.c */; };
+		D6595500178775DC00606B42 /* NSString+NaturalSort.m in Sources */ = {isa = PBXBuildFile; fileRef = D65954FF178775DC00606B42 /* NSString+NaturalSort.m */; };
 		D6967A2E176BD7EE00B005A5 /* NSImage+PixelSize.m in Sources */ = {isa = PBXBuildFile; fileRef = D6967A2D176BD7EE00B005A5 /* NSImage+PixelSize.m */; };
 		D6BDD1301774BD4A00918BA9 /* AboutPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6BDD12F1774BD4A00918BA9 /* AboutPanel.xib */; };
 		D6BDD1331774BDC800918BA9 /* RFAboutPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BDD1321774BDC800918BA9 /* RFAboutPanelController.m */; };
@@ -62,6 +64,10 @@
 		D633B023176B8AFC00E09476 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DocumentWindow.xib; sourceTree = "<group>"; };
 		D633B025176B8B4300E09476 /* RFWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFWindowController.h; sourceTree = "<group>"; };
 		D633B026176B8B4300E09476 /* RFWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFWindowController.m; sourceTree = "<group>"; };
+		D65954F8178771CE00606B42 /* strnatcmp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = strnatcmp.c; sourceTree = "<group>"; };
+		D65954F9178771CE00606B42 /* strnatcmp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = strnatcmp.h; sourceTree = "<group>"; };
+		D65954FE178775DC00606B42 /* NSString+NaturalSort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+NaturalSort.h"; sourceTree = "<group>"; };
+		D65954FF178775DC00606B42 /* NSString+NaturalSort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+NaturalSort.m"; sourceTree = "<group>"; };
 		D6967A2C176BD7EE00B005A5 /* NSImage+PixelSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+PixelSize.h"; sourceTree = "<group>"; };
 		D6967A2D176BD7EE00B005A5 /* NSImage+PixelSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+PixelSize.m"; sourceTree = "<group>"; };
 		D6BDD12F1774BD4A00918BA9 /* AboutPanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AboutPanel.xib; path = ../AboutPanel.xib; sourceTree = "<group>"; };
@@ -147,6 +153,9 @@
 				D633B022176B8AFC00E09476 /* DocumentWindow.xib */,
 				D609D910176B743D00520535 /* MainMenu.xib */,
 				D6BDD12F1774BD4A00918BA9 /* AboutPanel.xib */,
+				D65954FE178775DC00606B42 /* NSString+NaturalSort.h */,
+				D65954FF178775DC00606B42 /* NSString+NaturalSort.m */,
+				D65955011787766600606B42 /* Vendor */,
 				D609D902176B743C00520535 /* Supporting Files */,
 			);
 			path = ReFlanker;
@@ -180,6 +189,15 @@
 				D609D921176B743D00520535 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D65955011787766600606B42 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				D65954F9178771CE00606B42 /* strnatcmp.h */,
+				D65954F8178771CE00606B42 /* strnatcmp.c */,
+			);
+			name = Vendor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,6 +317,8 @@
 				D6967A2E176BD7EE00B005A5 /* NSImage+PixelSize.m in Sources */,
 				D6143DD31770F14000D73C0E /* NSArray+Ring.m in Sources */,
 				D6BDD1331774BDC800918BA9 /* RFAboutPanelController.m in Sources */,
+				D65954FA178771CE00606B42 /* strnatcmp.c in Sources */,
+				D6595500178775DC00606B42 /* NSString+NaturalSort.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
