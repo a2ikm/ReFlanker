@@ -73,8 +73,14 @@
     if ([savePanel runModal] == NSFileHandlingPanelCancelButton) return;
     
     NSURL *movedURL = [savePanel URL];
+    if ([movedURL isEqualTo:[self currentImageURL]]) return;
     
     NSFileManager *fileManager = [[NSFileManager alloc] init];
+    
+    if ([fileManager fileExistsAtPath:[movedURL path]]) {
+        [fileManager removeItemAtURL:movedURL error:NULL];
+    }
+    
     BOOL result = [fileManager moveItemAtURL:[self currentImageURL] toURL:movedURL error:NULL];
     if (result) {
         [self playUndoSound];
@@ -280,4 +286,5 @@
 {
     return undoManager;
 }
+
 @end
