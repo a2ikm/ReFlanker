@@ -14,6 +14,7 @@
 @interface RFWindowController (PRIVATE)
 - (void)updateWindowAndImageView;
 - (void)loadCurrentImage;
+- (void)encloseInScreen;
 - (void)reloadFileNames;
 - (BOOL)isAllowedFile:(NSString *)fileName;
 
@@ -220,6 +221,23 @@
     [[self window] setAspectRatio:pixelSize];
     
     [self resizeToFit:nil];
+    [self encloseInScreen];
+}
+
+- (void)encloseInScreen
+{
+    NSRect windowRect = self.window.frame;
+    NSRect screenRect = self.window.screen.visibleFrame;
+    
+    CGFloat xDiff = NSMaxX(windowRect) - NSMaxX(screenRect);
+    if(xDiff < 0) xDiff = 0;
+    
+    CGFloat yDiff = NSMaxY(windowRect) - NSMaxY(screenRect);
+    if(yDiff < 0) yDiff = 0;
+    
+    CGFloat x = windowRect.origin.x - xDiff;
+    CGFloat y = windowRect.origin.y - yDiff;
+    [[self window] setFrame:NSMakeRect(x, y, windowRect.size.width, windowRect.size.height) display:YES];
 }
 
 - (void)reloadFileNames
