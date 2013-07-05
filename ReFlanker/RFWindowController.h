@@ -37,6 +37,7 @@
 
 - (IBAction)minimize:(id)sender;
 
+- (IBAction)resizeToFit:(id)sender;
 - (IBAction)resizeToActualSize:(id)sender;
 - (IBAction)resizeToHalfSize:(id)sender;
 - (IBAction)resizeToQuarterSize:(id)sender;

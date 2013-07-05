@@ -155,6 +155,21 @@
     [[self window] miniaturize:sender];
 }
 
+- (IBAction)resizeToFit:(id)sender
+{
+    NSSize pixelSize = [[[self imageView] image] pixelSize];
+    
+    CGFloat w = pixelSize.width;
+    CGFloat h = pixelSize.height;
+    NSSize maxSize = self.window.screen.visibleFrame.size;
+    if (w > maxSize.width)  { h = h * maxSize.width / w;  w = maxSize.width; }
+    if (h > maxSize.height) { w = w * maxSize.height / h; h = maxSize.height; }
+    
+    CGFloat x = self.window.frame.origin.x;
+    CGFloat y = self.window.frame.origin.y;
+    [[self window] setFrame:NSMakeRect(x, y, w, h) display:YES];
+}
+
 - (IBAction)resizeToActualSize:(id)sender
 {
     [self resizeToScale:1.0];
@@ -193,15 +208,7 @@
     NSSize pixelSize = [image pixelSize];
     [[self window] setAspectRatio:pixelSize];
     
-    CGFloat w = pixelSize.width;
-    CGFloat h = pixelSize.height;
-    NSSize maxSize = self.window.screen.visibleFrame.size;
-    if (w > maxSize.width)  { h = h * maxSize.width / w;  w = maxSize.width; }
-    if (h > maxSize.height) { w = w * maxSize.height / h; h = maxSize.height; }
-
-    CGFloat x = self.window.frame.origin.x;
-    CGFloat y = self.window.frame.origin.y;
-    [[self window] setFrame:NSMakeRect(x, y, w, h) display:YES];
+    [self resizeToFit:nil];
 }
 
 - (void)reloadFileNames
