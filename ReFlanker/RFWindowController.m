@@ -180,6 +180,11 @@
     [self resizeToScale:0.5];
 }
 
+- (IBAction)resizeToThirdSize:(id)sender
+{
+    [self resizeToScale:0.33];
+}
+
 - (IBAction)resizeToQuarterSize:(id)sender
 {
     [self resizeToScale:0.25];

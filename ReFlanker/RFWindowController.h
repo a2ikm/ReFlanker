@@ -40,6 +40,7 @@
 - (IBAction)resizeToFit:(id)sender;
 - (IBAction)resizeToActualSize:(id)sender;
 - (IBAction)resizeToHalfSize:(id)sender;
+- (IBAction)resizeToThirdSize:(id)sender;
 - (IBAction)resizeToQuarterSize:(id)sender;
 
 - (NSURL *)currentImageURL;
