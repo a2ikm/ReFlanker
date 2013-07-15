@@ -25,6 +25,7 @@
 
 - (IBAction)next:(id)sender;
 - (IBAction)previous:(id)sender;
+- (IBAction)random:(id)sender;
 
 - (IBAction)move:(id)sender;
 - (IBAction)moveToTrash:(id)sender;

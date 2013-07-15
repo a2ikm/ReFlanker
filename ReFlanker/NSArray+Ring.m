@@ -37,4 +37,10 @@
     return [self objectAtIndex:previousIndex];
 }
 
+- (id)random
+{
+    NSUInteger i = arc4random() % [self count];
+    return [self objectAtIndex:i];
+}
+
 @end

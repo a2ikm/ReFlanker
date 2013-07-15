@@ -12,4 +12,5 @@
 - (NSUInteger)lastIndex;
 - (id)nextObjectOf:(id)object;
 - (id)previousObjectOf:(id)object;
+- (id)random;
 @end

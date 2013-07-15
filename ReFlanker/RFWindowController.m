@@ -67,6 +67,12 @@
     [self updateWindowAndImageView];
 }
 
+- (IBAction)random:(id)sender
+{
+    currentFileName = [fileNames random];
+    [self updateWindowAndImageView];
+}
+
 - (IBAction)move:(id)sender
 {
     NSSavePanel *savePanel = [NSSavePanel savePanel];
