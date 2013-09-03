@@ -4,13 +4,18 @@
 
 #ifdef __OBJC__
     #import <Cocoa/Cocoa.h>
+
+    #import "RFAppDelegate.h"
 #endif
 
 #ifdef DEBUG
-    #define DLog(fmt, ...) NSLog((@"[DEBUG] " fmt), ##__VA_ARGS__);
+#define LOG(format, ...) NSLog((@"%s: %d: " format), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
 #else
-    #define DLog(...)
+#define LOG(format, ...)
 #endif
 
-#define ALLOWED_FILE_TYPES [[NSApp delegate] allowedFileTypes]
-#define APP_DELEGATE [NSApp delegate]
+#define LOGMETHODNAME()     LOG(@"%s", __PRETTY_FUNCTION__)
+#define BOOL_TO_STRING(x)   (x ? @"YES" : @"NO")
+
+#define APP_DELEGATE        ((RFAppDelegate *)[NSApp delegate])
+#define ALLOWED_FILE_TYPES  [APP_DELEGATE allowedFileTypes]

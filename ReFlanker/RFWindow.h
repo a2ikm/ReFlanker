@@ -8,7 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface RFWindow : NSWindow {
+@interface RFWindow : NSWindow
+{
     NSPoint initialLocation;
 }
 

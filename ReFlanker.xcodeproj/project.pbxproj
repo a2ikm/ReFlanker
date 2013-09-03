@@ -102,6 +102,7 @@
 				D609D901176B743C00520535 /* ReFlanker */,
 				D609D91E176B743D00520535 /* ReFlankerTests */,
 				D609D8FA176B743C00520535 /* Frameworks */,
+				D65955011787766600606B42 /* Vendor */,
 				D609D8F9176B743C00520535 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -140,22 +141,10 @@
 			children = (
 				D609D90D176B743C00520535 /* RFAppDelegate.h */,
 				D609D90E176B743C00520535 /* RFAppDelegate.m */,
-				D609D933176B7AE100520535 /* RFWindow.h */,
-				D609D934176B7AE100520535 /* RFWindow.m */,
-				D633B025176B8B4300E09476 /* RFWindowController.h */,
-				D633B026176B8B4300E09476 /* RFWindowController.m */,
-				D6BDD1311774BDC800918BA9 /* RFAboutPanelController.h */,
-				D6BDD1321774BDC800918BA9 /* RFAboutPanelController.m */,
-				D6143DD11770F14000D73C0E /* NSArray+Ring.h */,
-				D6143DD21770F14000D73C0E /* NSArray+Ring.m */,
-				D6967A2C176BD7EE00B005A5 /* NSImage+PixelSize.h */,
-				D6967A2D176BD7EE00B005A5 /* NSImage+PixelSize.m */,
-				D633B022176B8AFC00E09476 /* DocumentWindow.xib */,
-				D609D910176B743D00520535 /* MainMenu.xib */,
-				D6BDD12F1774BD4A00918BA9 /* AboutPanel.xib */,
-				D65954FE178775DC00606B42 /* NSString+NaturalSort.h */,
-				D65954FF178775DC00606B42 /* NSString+NaturalSort.m */,
-				D65955011787766600606B42 /* Vendor */,
+				D6A7D44E17D647B700BDF87C /* Controllers */,
+				D6A7D44F17D647C400BDF87C /* Views and Windows */,
+				D6A7D45017D647E500BDF87C /* Extra */,
+				D6A7D45117D647F200BDF87C /* xibs */,
 				D609D902176B743C00520535 /* Supporting Files */,
 			);
 			path = ReFlanker;
@@ -198,6 +187,50 @@
 				D65954F8178771CE00606B42 /* strnatcmp.c */,
 			);
 			name = Vendor;
+			path = ReFlanker;
+			sourceTree = "<group>";
+		};
+		D6A7D44E17D647B700BDF87C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D633B025176B8B4300E09476 /* RFWindowController.h */,
+				D633B026176B8B4300E09476 /* RFWindowController.m */,
+				D6BDD1311774BDC800918BA9 /* RFAboutPanelController.h */,
+				D6BDD1321774BDC800918BA9 /* RFAboutPanelController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		D6A7D44F17D647C400BDF87C /* Views and Windows */ = {
+			isa = PBXGroup;
+			children = (
+				D609D933176B7AE100520535 /* RFWindow.h */,
+				D609D934176B7AE100520535 /* RFWindow.m */,
+			);
+			name = "Views and Windows";
+			sourceTree = "<group>";
+		};
+		D6A7D45017D647E500BDF87C /* Extra */ = {
+			isa = PBXGroup;
+			children = (
+				D6143DD11770F14000D73C0E /* NSArray+Ring.h */,
+				D6143DD21770F14000D73C0E /* NSArray+Ring.m */,
+				D6967A2C176BD7EE00B005A5 /* NSImage+PixelSize.h */,
+				D6967A2D176BD7EE00B005A5 /* NSImage+PixelSize.m */,
+				D65954FE178775DC00606B42 /* NSString+NaturalSort.h */,
+				D65954FF178775DC00606B42 /* NSString+NaturalSort.m */,
+			);
+			name = Extra;
+			sourceTree = "<group>";
+		};
+		D6A7D45117D647F200BDF87C /* xibs */ = {
+			isa = PBXGroup;
+			children = (
+				D633B022176B8AFC00E09476 /* DocumentWindow.xib */,
+				D609D910176B743D00520535 /* MainMenu.xib */,
+				D6BDD12F1774BD4A00918BA9 /* AboutPanel.xib */,
+			);
+			name = xibs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
