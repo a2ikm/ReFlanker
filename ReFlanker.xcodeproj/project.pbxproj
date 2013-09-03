@@ -27,6 +27,11 @@
 		D6BA928217D659B000BECC9D /* RFLoaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BA928117D659B000BECC9D /* RFLoaderManager.m */; };
 		D6BA928817D65B7900BECC9D /* RFImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BA928717D65B7900BECC9D /* RFImageLoader.m */; };
 		D6BA928B17D65E7B00BECC9D /* RFZipLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BA928A17D65E7B00BECC9D /* RFZipLoader.m */; };
+		D6BA929917D6609500BECC9D /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = D6BA928F17D6609500BECC9D /* ioapi.c */; };
+		D6BA929A17D6609500BECC9D /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = D6BA929117D6609500BECC9D /* mztools.c */; };
+		D6BA929B17D6609500BECC9D /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = D6BA929317D6609500BECC9D /* unzip.c */; };
+		D6BA929C17D6609500BECC9D /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = D6BA929517D6609500BECC9D /* zip.c */; };
+		D6BA929D17D6609500BECC9D /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BA929817D6609500BECC9D /* SSZipArchive.m */; };
 		D6BDD1301774BD4A00918BA9 /* AboutPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6BDD12F1774BD4A00918BA9 /* AboutPanel.xib */; };
 		D6BDD1331774BDC800918BA9 /* RFAboutPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BDD1321774BDC800918BA9 /* RFAboutPanelController.m */; };
 /* End PBXBuildFile section */
@@ -80,6 +85,17 @@
 		D6BA928717D65B7900BECC9D /* RFImageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFImageLoader.m; sourceTree = "<group>"; };
 		D6BA928917D65E7B00BECC9D /* RFZipLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFZipLoader.h; sourceTree = "<group>"; };
 		D6BA928A17D65E7B00BECC9D /* RFZipLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFZipLoader.m; sourceTree = "<group>"; };
+		D6BA928E17D6609500BECC9D /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
+		D6BA928F17D6609500BECC9D /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
+		D6BA929017D6609500BECC9D /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
+		D6BA929117D6609500BECC9D /* mztools.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mztools.c; sourceTree = "<group>"; };
+		D6BA929217D6609500BECC9D /* mztools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mztools.h; sourceTree = "<group>"; };
+		D6BA929317D6609500BECC9D /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unzip.c; sourceTree = "<group>"; };
+		D6BA929417D6609500BECC9D /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unzip.h; sourceTree = "<group>"; };
+		D6BA929517D6609500BECC9D /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zip.c; sourceTree = "<group>"; };
+		D6BA929617D6609500BECC9D /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
+		D6BA929717D6609500BECC9D /* SSZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSZipArchive.h; path = ssziparchive/SSZipArchive.h; sourceTree = SOURCE_ROOT; };
+		D6BA929817D6609500BECC9D /* SSZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSZipArchive.m; path = ssziparchive/SSZipArchive.m; sourceTree = SOURCE_ROOT; };
 		D6BDD12F1774BD4A00918BA9 /* AboutPanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutPanel.xib; sourceTree = "<group>"; };
 		D6BDD1311774BDC800918BA9 /* RFAboutPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFAboutPanelController.h; sourceTree = "<group>"; };
 		D6BDD1321774BDC800918BA9 /* RFAboutPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFAboutPanelController.m; sourceTree = "<group>"; };
@@ -194,6 +210,7 @@
 		D65955011787766600606B42 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				D6BA929E17D6609D00BECC9D /* ssziparchive */,
 				D6BA928C17D65FAD00BECC9D /* strnatcmp */,
 			);
 			name = Vendor;
@@ -265,6 +282,33 @@
 			);
 			name = strnatcmp;
 			path = ../strnatcmp;
+			sourceTree = "<group>";
+		};
+		D6BA928D17D6609500BECC9D /* minizip */ = {
+			isa = PBXGroup;
+			children = (
+				D6BA928E17D6609500BECC9D /* crypt.h */,
+				D6BA928F17D6609500BECC9D /* ioapi.c */,
+				D6BA929017D6609500BECC9D /* ioapi.h */,
+				D6BA929117D6609500BECC9D /* mztools.c */,
+				D6BA929217D6609500BECC9D /* mztools.h */,
+				D6BA929317D6609500BECC9D /* unzip.c */,
+				D6BA929417D6609500BECC9D /* unzip.h */,
+				D6BA929517D6609500BECC9D /* zip.c */,
+				D6BA929617D6609500BECC9D /* zip.h */,
+			);
+			name = minizip;
+			path = ssziparchive/minizip;
+			sourceTree = SOURCE_ROOT;
+		};
+		D6BA929E17D6609D00BECC9D /* ssziparchive */ = {
+			isa = PBXGroup;
+			children = (
+				D6BA928D17D6609500BECC9D /* minizip */,
+				D6BA929717D6609500BECC9D /* SSZipArchive.h */,
+				D6BA929817D6609500BECC9D /* SSZipArchive.m */,
+			);
+			name = ssziparchive;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -389,6 +433,11 @@
 				D6BA928217D659B000BECC9D /* RFLoaderManager.m in Sources */,
 				D6BA928817D65B7900BECC9D /* RFImageLoader.m in Sources */,
 				D6BA928B17D65E7B00BECC9D /* RFZipLoader.m in Sources */,
+				D6BA929917D6609500BECC9D /* ioapi.c in Sources */,
+				D6BA929A17D6609500BECC9D /* mztools.c in Sources */,
+				D6BA929B17D6609500BECC9D /* unzip.c in Sources */,
+				D6BA929C17D6609500BECC9D /* zip.c in Sources */,
+				D6BA929D17D6609500BECC9D /* SSZipArchive.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
