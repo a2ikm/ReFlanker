@@ -26,6 +26,7 @@
 		D6967A2E176BD7EE00B005A5 /* NSImage+PixelSize.m in Sources */ = {isa = PBXBuildFile; fileRef = D6967A2D176BD7EE00B005A5 /* NSImage+PixelSize.m */; };
 		D6BA928217D659B000BECC9D /* RFLoaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BA928117D659B000BECC9D /* RFLoaderManager.m */; };
 		D6BA928817D65B7900BECC9D /* RFImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BA928717D65B7900BECC9D /* RFImageLoader.m */; };
+		D6BA928B17D65E7B00BECC9D /* RFZipLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BA928A17D65E7B00BECC9D /* RFZipLoader.m */; };
 		D6BDD1301774BD4A00918BA9 /* AboutPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6BDD12F1774BD4A00918BA9 /* AboutPanel.xib */; };
 		D6BDD1331774BDC800918BA9 /* RFAboutPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BDD1321774BDC800918BA9 /* RFAboutPanelController.m */; };
 /* End PBXBuildFile section */
@@ -77,7 +78,9 @@
 		D6BA928317D65B3D00BECC9D /* RFLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFLoader.h; sourceTree = "<group>"; };
 		D6BA928617D65B7900BECC9D /* RFImageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFImageLoader.h; sourceTree = "<group>"; };
 		D6BA928717D65B7900BECC9D /* RFImageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFImageLoader.m; sourceTree = "<group>"; };
-		D6BDD12F1774BD4A00918BA9 /* AboutPanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AboutPanel.xib; path = ../AboutPanel.xib; sourceTree = "<group>"; };
+		D6BA928917D65E7B00BECC9D /* RFZipLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFZipLoader.h; sourceTree = "<group>"; };
+		D6BA928A17D65E7B00BECC9D /* RFZipLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFZipLoader.m; sourceTree = "<group>"; };
+		D6BDD12F1774BD4A00918BA9 /* AboutPanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutPanel.xib; sourceTree = "<group>"; };
 		D6BDD1311774BDC800918BA9 /* RFAboutPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFAboutPanelController.h; sourceTree = "<group>"; };
 		D6BDD1321774BDC800918BA9 /* RFAboutPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFAboutPanelController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -249,6 +252,8 @@
 				D6BA928317D65B3D00BECC9D /* RFLoader.h */,
 				D6BA928617D65B7900BECC9D /* RFImageLoader.h */,
 				D6BA928717D65B7900BECC9D /* RFImageLoader.m */,
+				D6BA928917D65E7B00BECC9D /* RFZipLoader.h */,
+				D6BA928A17D65E7B00BECC9D /* RFZipLoader.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -374,6 +379,7 @@
 				D6595500178775DC00606B42 /* NSString+NaturalSort.m in Sources */,
 				D6BA928217D659B000BECC9D /* RFLoaderManager.m in Sources */,
 				D6BA928817D65B7900BECC9D /* RFImageLoader.m in Sources */,
+				D6BA928B17D65E7B00BECC9D /* RFZipLoader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
