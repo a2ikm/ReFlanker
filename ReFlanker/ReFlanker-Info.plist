@@ -11,43 +11,23 @@
 			<array>
 				<string>jpeg</string>
 				<string>jpg</string>
-			</array>
-			<key>CFBundleTypeMIMETypes</key>
-			<array>
-				<string>image/jpeg</string>
-			</array>
-			<key>CFBundleTypeName</key>
-			<string>jpeg image</string>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-		</dict>
-		<dict>
-			<key>CFBundleTypeExtensions</key>
-			<array>
 				<string>png</string>
-			</array>
-			<key>CFBundleTypeMIMETypes</key>
-			<array>
-				<string>image/png</string>
-			</array>
-			<key>CFBundleTypeName</key>
-			<string>png image</string>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-		</dict>
-		<dict>
-			<key>CFBundleTypeExtensions</key>
-			<array>
 				<string>gif</string>
 			</array>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
+				<string>image/jpeg</string>
+				<string>image/png</string>
 				<string>image/gif</string>
 			</array>
 			<key>CFBundleTypeName</key>
-			<string>gif image</string>
+			<string>image</string>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>image</string>
+			</array>
 		</dict>
 	</array>
 	<key>CFBundleExecutable</key>
