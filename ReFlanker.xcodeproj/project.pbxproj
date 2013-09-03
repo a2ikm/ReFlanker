@@ -194,8 +194,7 @@
 		D65955011787766600606B42 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				D65954F9178771CE00606B42 /* strnatcmp.h */,
-				D65954F8178771CE00606B42 /* strnatcmp.c */,
+				D6BA928C17D65FAD00BECC9D /* strnatcmp */,
 			);
 			name = Vendor;
 			path = ReFlanker;
@@ -256,6 +255,16 @@
 				D6BA928A17D65E7B00BECC9D /* RFZipLoader.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		D6BA928C17D65FAD00BECC9D /* strnatcmp */ = {
+			isa = PBXGroup;
+			children = (
+				D65954F9178771CE00606B42 /* strnatcmp.h */,
+				D65954F8178771CE00606B42 /* strnatcmp.c */,
+			);
+			name = strnatcmp;
+			path = ../strnatcmp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
