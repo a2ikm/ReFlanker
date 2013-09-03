@@ -24,6 +24,8 @@
 		D65954FA178771CE00606B42 /* strnatcmp.c in Sources */ = {isa = PBXBuildFile; fileRef = D65954F8178771CE00606B42 /* strnatcmp.c */; };
 		D6595500178775DC00606B42 /* NSString+NaturalSort.m in Sources */ = {isa = PBXBuildFile; fileRef = D65954FF178775DC00606B42 /* NSString+NaturalSort.m */; };
 		D6967A2E176BD7EE00B005A5 /* NSImage+PixelSize.m in Sources */ = {isa = PBXBuildFile; fileRef = D6967A2D176BD7EE00B005A5 /* NSImage+PixelSize.m */; };
+		D6BA928217D659B000BECC9D /* RFLoaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BA928117D659B000BECC9D /* RFLoaderManager.m */; };
+		D6BA928817D65B7900BECC9D /* RFImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BA928717D65B7900BECC9D /* RFImageLoader.m */; };
 		D6BDD1301774BD4A00918BA9 /* AboutPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6BDD12F1774BD4A00918BA9 /* AboutPanel.xib */; };
 		D6BDD1331774BDC800918BA9 /* RFAboutPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BDD1321774BDC800918BA9 /* RFAboutPanelController.m */; };
 /* End PBXBuildFile section */
@@ -70,6 +72,11 @@
 		D65954FF178775DC00606B42 /* NSString+NaturalSort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+NaturalSort.m"; sourceTree = "<group>"; };
 		D6967A2C176BD7EE00B005A5 /* NSImage+PixelSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+PixelSize.h"; sourceTree = "<group>"; };
 		D6967A2D176BD7EE00B005A5 /* NSImage+PixelSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+PixelSize.m"; sourceTree = "<group>"; };
+		D6BA928017D659B000BECC9D /* RFLoaderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFLoaderManager.h; sourceTree = "<group>"; };
+		D6BA928117D659B000BECC9D /* RFLoaderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFLoaderManager.m; sourceTree = "<group>"; };
+		D6BA928317D65B3D00BECC9D /* RFLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFLoader.h; sourceTree = "<group>"; };
+		D6BA928617D65B7900BECC9D /* RFImageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFImageLoader.h; sourceTree = "<group>"; };
+		D6BA928717D65B7900BECC9D /* RFImageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFImageLoader.m; sourceTree = "<group>"; };
 		D6BDD12F1774BD4A00918BA9 /* AboutPanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AboutPanel.xib; path = ../AboutPanel.xib; sourceTree = "<group>"; };
 		D6BDD1311774BDC800918BA9 /* RFAboutPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFAboutPanelController.h; sourceTree = "<group>"; };
 		D6BDD1321774BDC800918BA9 /* RFAboutPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFAboutPanelController.m; sourceTree = "<group>"; };
@@ -142,6 +149,7 @@
 				D609D90D176B743C00520535 /* RFAppDelegate.h */,
 				D609D90E176B743C00520535 /* RFAppDelegate.m */,
 				D6A7D44E17D647B700BDF87C /* Controllers */,
+				D6BA927A17D6539500BECC9D /* Models */,
 				D6A7D44F17D647C400BDF87C /* Views and Windows */,
 				D6A7D45017D647E500BDF87C /* Extra */,
 				D6A7D45117D647F200BDF87C /* xibs */,
@@ -231,6 +239,18 @@
 				D6BDD12F1774BD4A00918BA9 /* AboutPanel.xib */,
 			);
 			name = xibs;
+			sourceTree = "<group>";
+		};
+		D6BA927A17D6539500BECC9D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D6BA928017D659B000BECC9D /* RFLoaderManager.h */,
+				D6BA928117D659B000BECC9D /* RFLoaderManager.m */,
+				D6BA928317D65B3D00BECC9D /* RFLoader.h */,
+				D6BA928617D65B7900BECC9D /* RFImageLoader.h */,
+				D6BA928717D65B7900BECC9D /* RFImageLoader.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,6 +372,8 @@
 				D6BDD1331774BDC800918BA9 /* RFAboutPanelController.m in Sources */,
 				D65954FA178771CE00606B42 /* strnatcmp.c in Sources */,
 				D6595500178775DC00606B42 /* NSString+NaturalSort.m in Sources */,
+				D6BA928217D659B000BECC9D /* RFLoaderManager.m in Sources */,
+				D6BA928817D65B7900BECC9D /* RFImageLoader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
