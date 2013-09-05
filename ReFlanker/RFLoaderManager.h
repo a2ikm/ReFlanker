@@ -13,5 +13,6 @@
 
 + (instancetype)sharedManager;
 - (id<RFLoader>)loaderForURL:(NSURL *)fileURL;
+- (void)cleanup;
 
 @end

@@ -12,6 +12,7 @@
 @interface RFZipLoader ()
 @property (nonatomic, retain) NSURL *fileURL;
 @property (readonly, nonatomic, retain) NSURL *unarchivedDirectoryURL;
++ (NSURL *)unarchivedDirectoryURL;
 - (void)unzipOnce;
 - (NSURL *)determineInitialURL;
 - (BOOL)alreadyUnarchived;
@@ -39,7 +40,21 @@
     return _initialURL;
 }
 
++ (void)cleanup
+{
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    if ([fileManager fileExistsAtPath:[[self unarchivedDirectoryURL] path]]) {
+        [fileManager removeItemAtURL:[self unarchivedDirectoryURL] error:NULL];
+    }
+}
+
 #pragma mark - PRIVATE
+
++ (NSURL *)unarchivedDirectoryURL
+{
+    return [[APP_DELEGATE cacheDirectory] URLByAppendingPathComponent:@"unarchived"];
+}
 
 - (NSURL *)unarchivedDirectoryURL
 {
@@ -47,7 +62,7 @@
         NSString *dir1 = [[NSData dataWithContentsOfURL:self.fileURL] MD5Digest];
         NSString *dir2 = [[self.fileURL lastPathComponent] stringByDeletingPathExtension];
         
-        _unarchivedDirectoryURL = [[[[APP_DELEGATE cacheDirectory] URLByAppendingPathComponent:@"unarchived"] URLByAppendingPathComponent:dir1] URLByAppendingPathComponent:dir2];
+        _unarchivedDirectoryURL = [[[[self class] unarchivedDirectoryURL] URLByAppendingPathComponent:dir1] URLByAppendingPathComponent:dir2];
     }
     return _unarchivedDirectoryURL;
 }

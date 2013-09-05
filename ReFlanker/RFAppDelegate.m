@@ -102,6 +102,11 @@
     return YES;
 }
 
+- (void)applicationWillTerminate:(NSNotification *)aNotification
+{
+    [[RFLoaderManager sharedManager] cleanup];
+}
+
 #pragma mark --- NSUserNotificationCenterDelegate ---
 
 

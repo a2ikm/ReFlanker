@@ -42,4 +42,14 @@ static id _sharedManager = nil;
     return [[RFImageLoader alloc] initWithURL:fileURL];
 }
 
+- (void)cleanup
+{
+    NSArray *loaderClasses = @[[RFImageLoader class], [RFZipLoader class]];
+    for (Class loaderClass in loaderClasses) {
+        if ([loaderClass respondsToSelector:@selector(cleanup)]) {
+            [loaderClass cleanup];
+        }
+    }
+}
+
 @end

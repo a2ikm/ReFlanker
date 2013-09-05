@@ -13,4 +13,7 @@
 - (id)initWithURL:(NSURL *)fileURL;
 - (NSURL *)initialFileURL;
 
+@optional
++ (void)cleanup;
+
 @end
