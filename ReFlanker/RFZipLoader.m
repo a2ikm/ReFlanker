@@ -108,10 +108,10 @@
 - (NSURL *)determineInitialURL
 {
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSArray *URLs = [fileManager contentsOfDirectoryAtPath:[[self unarchivedDirectoryURL] path] error:NULL];
+    NSArray *files = [fileManager contentsOfDirectoryAtPath:[[self unarchivedDirectoryURL] path] error:NULL];
     
     NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
-        NSString *extension = [[(NSURL *)evaluatedObject pathExtension] lowercaseString];
+        NSString *extension = [[(NSString *)evaluatedObject pathExtension] lowercaseString];
         for (NSString *allowedFileType in ALLOWED_FILE_TYPES) {
             if([extension isEqualToString:allowedFileType]) {
                 return YES;
@@ -121,10 +121,10 @@
         
     }];
     
-    NSArray *filteredURLs = [URLs filteredArrayUsingPredicate:predicate];
+    NSArray *filteredFiles = [files filteredArrayUsingPredicate:predicate];
     
-    if ([filteredURLs count] > 0) {
-        return [[self unarchivedDirectoryURL] URLByAppendingPathComponent:[filteredURLs objectAtIndex:0]];
+    if ([filteredFiles count] > 0) {
+        return [[self unarchivedDirectoryURL] URLByAppendingPathComponent:[filteredFiles objectAtIndex:0]];
     } else {
         return nil;
     }
