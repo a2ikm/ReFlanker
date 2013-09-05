@@ -65,6 +65,12 @@
     [windowController showWindow:self];
 }
 
+- (NSURL *)cacheDirectory
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    return [[NSURL fileURLWithPath:[paths lastObject]] URLByAppendingPathComponent:BUNDLE_IDENTIFIER];
+}
+
 #pragma mark --- PRIVATE ---
 
 - (RFWindowController *)currentWindowController

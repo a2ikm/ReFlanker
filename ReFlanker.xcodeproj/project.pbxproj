@@ -32,6 +32,9 @@
 		D6BA929B17D6609500BECC9D /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = D6BA929317D6609500BECC9D /* unzip.c */; };
 		D6BA929C17D6609500BECC9D /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = D6BA929517D6609500BECC9D /* zip.c */; };
 		D6BA929D17D6609500BECC9D /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BA929817D6609500BECC9D /* SSZipArchive.m */; };
+		D6BA92A017D660D700BECC9D /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D6BA929F17D660D700BECC9D /* libz.1.2.5.dylib */; };
+		D6BA92A517D662CD00BECC9D /* libcommonCrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D6BA92A417D662CD00BECC9D /* libcommonCrypto.dylib */; };
+		D6BA92A817D8C2A000BECC9D /* NSData+MD5Digest.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BA92A717D8C2A000BECC9D /* NSData+MD5Digest.m */; };
 		D6BDD1301774BD4A00918BA9 /* AboutPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6BDD12F1774BD4A00918BA9 /* AboutPanel.xib */; };
 		D6BDD1331774BDC800918BA9 /* RFAboutPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BDD1321774BDC800918BA9 /* RFAboutPanelController.m */; };
 /* End PBXBuildFile section */
@@ -96,6 +99,10 @@
 		D6BA929617D6609500BECC9D /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
 		D6BA929717D6609500BECC9D /* SSZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSZipArchive.h; path = ssziparchive/SSZipArchive.h; sourceTree = SOURCE_ROOT; };
 		D6BA929817D6609500BECC9D /* SSZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSZipArchive.m; path = ssziparchive/SSZipArchive.m; sourceTree = SOURCE_ROOT; };
+		D6BA929F17D660D700BECC9D /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
+		D6BA92A417D662CD00BECC9D /* libcommonCrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcommonCrypto.dylib; path = usr/lib/system/libcommonCrypto.dylib; sourceTree = SDKROOT; };
+		D6BA92A617D8C2A000BECC9D /* NSData+MD5Digest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MD5Digest.h"; sourceTree = "<group>"; };
+		D6BA92A717D8C2A000BECC9D /* NSData+MD5Digest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+MD5Digest.m"; sourceTree = "<group>"; };
 		D6BDD12F1774BD4A00918BA9 /* AboutPanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutPanel.xib; sourceTree = "<group>"; };
 		D6BDD1311774BDC800918BA9 /* RFAboutPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFAboutPanelController.h; sourceTree = "<group>"; };
 		D6BDD1321774BDC800918BA9 /* RFAboutPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFAboutPanelController.m; sourceTree = "<group>"; };
@@ -106,6 +113,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6BA92A517D662CD00BECC9D /* libcommonCrypto.dylib in Frameworks */,
+				D6BA92A017D660D700BECC9D /* libz.1.2.5.dylib in Frameworks */,
 				D609D8FC176B743C00520535 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,6 +154,8 @@
 		D609D8FA176B743C00520535 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D6BA92A417D662CD00BECC9D /* libcommonCrypto.dylib */,
+				D6BA929F17D660D700BECC9D /* libz.1.2.5.dylib */,
 				D609D8FB176B743C00520535 /* Cocoa.framework */,
 				D609D919176B743D00520535 /* SenTestingKit.framework */,
 				D609D8FD176B743C00520535 /* Other Frameworks */,
@@ -246,6 +257,8 @@
 				D6967A2D176BD7EE00B005A5 /* NSImage+PixelSize.m */,
 				D65954FE178775DC00606B42 /* NSString+NaturalSort.h */,
 				D65954FF178775DC00606B42 /* NSString+NaturalSort.m */,
+				D6BA92A617D8C2A000BECC9D /* NSData+MD5Digest.h */,
+				D6BA92A717D8C2A000BECC9D /* NSData+MD5Digest.m */,
 			);
 			name = Extra;
 			sourceTree = "<group>";
@@ -438,6 +451,7 @@
 				D6BA929B17D6609500BECC9D /* unzip.c in Sources */,
 				D6BA929C17D6609500BECC9D /* zip.c in Sources */,
 				D6BA929D17D6609500BECC9D /* SSZipArchive.m in Sources */,
+				D6BA92A817D8C2A000BECC9D /* NSData+MD5Digest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -562,6 +576,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ReFlanker/ReFlanker-Prefix.pch";
 				INFOPLIST_FILE = "ReFlanker/ReFlanker-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)/usr/lib/system\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -574,6 +592,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ReFlanker/ReFlanker-Prefix.pch";
 				INFOPLIST_FILE = "ReFlanker/ReFlanker-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)/usr/lib/system\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

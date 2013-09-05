@@ -8,6 +8,7 @@
 
 #import "RFLoaderManager.h"
 #import "RFImageLoader.h"
+#import "RFZipLoader.h"
 
 @implementation RFLoaderManager
 
@@ -35,6 +36,9 @@ static id _sharedManager = nil;
 
 - (id<RFLoader>)loaderForURL:(NSURL *)fileURL;
 {
+    if ([[[fileURL pathExtension] lowercaseString] isEqualToString:@"zip"]) {
+        return [[RFZipLoader alloc] initWithURL:fileURL];
+    }
     return [[RFImageLoader alloc] initWithURL:fileURL];
 }
 
