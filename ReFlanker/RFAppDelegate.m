@@ -80,7 +80,10 @@
 
 #pragma mark --- NSApplicationDelegate ---
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
+{
+    [[RFLoaderManager sharedManager] cleanup];
+    
     windowControllers = [[NSMutableArray alloc] init];
     
     [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
