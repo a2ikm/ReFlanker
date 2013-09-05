@@ -82,7 +82,27 @@
                                      error:NULL];
     }
     
-    [SSZipArchive unzipFileAtPath:[self.fileURL path] toDestination:[[self unarchivedDirectoryURL] path]];
+    [SSZipArchive unzipFileAtPath:[self.fileURL path]
+                    toDestination:[[self unarchivedDirectoryURL] path]
+                        overwrite:YES
+                         password:nil error:NULL];
+    
+    NSArray *files = [fileManager contentsOfDirectoryAtPath:[[self unarchivedDirectoryURL] path] error:NULL];
+    if ([files count] > 0) {
+        NSURL *firstFileURL = [[self unarchivedDirectoryURL] URLByAppendingPathComponent:[files objectAtIndex:0]];
+        BOOL isDirectory = NO;
+        [fileManager fileExistsAtPath:[firstFileURL path] isDirectory:&isDirectory];
+        if (isDirectory) {
+            NSArray *subFiles = [fileManager contentsOfDirectoryAtPath:[firstFileURL path] error:NULL];
+            for (NSString *subFile in subFiles) {
+                NSURL *fromURL = [firstFileURL URLByAppendingPathComponent:subFile];
+                NSURL *toURL   = [[self unarchivedDirectoryURL] URLByAppendingPathComponent:subFile];
+                [fileManager moveItemAtPath:[fromURL path] toPath:[toURL path] error:NULL];
+            }
+            
+            [fileManager removeItemAtPath:[firstFileURL path] error:NULL];
+        }
+    }
 }
 
 - (NSURL *)determineInitialURL
