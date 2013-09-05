@@ -5,6 +5,8 @@
 #ifdef __OBJC__
     #import <Cocoa/Cocoa.h>
 
+    #import "NSData+MD5Digest.h"
+
     #import "RFAppDelegate.h"
 #endif
 
@@ -19,3 +21,5 @@
 
 #define APP_DELEGATE        ((RFAppDelegate *)[NSApp delegate])
 #define ALLOWED_FILE_TYPES  [APP_DELEGATE allowedFileTypes]
+
+#define BUNDLE_IDENTIFIER   [[NSBundle mainBundle] bundleIdentifier]

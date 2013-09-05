@@ -10,6 +10,7 @@
 #import "RFWindow.h"
 #import "RFWindowController.h"
 #import "RFAboutPanelController.h"
+#import "RFLoaderManager.h"
 #import "NSArray+Ring.h"
 
 @interface RFAppDelegate (PRIVATE)
@@ -58,9 +59,16 @@
 
 - (void)openNewWindowWithInitialFileURL:(NSURL *)fileURL
 {
-    RFWindowController *windowController = [[RFWindowController alloc] initWithInitialFileURL:fileURL];
+    id<RFLoader> loader = [[RFLoaderManager sharedManager] loaderForURL:fileURL];
+    RFWindowController *windowController = [[RFWindowController alloc] initWithInitialFileURL:[loader initialFileURL]];
     [windowControllers addObject:windowController];
     [windowController showWindow:self];
+}
+
+- (NSURL *)cacheDirectory
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    return [[NSURL fileURLWithPath:[paths lastObject]] URLByAppendingPathComponent:BUNDLE_IDENTIFIER];
 }
 
 #pragma mark --- PRIVATE ---
@@ -92,6 +100,11 @@
     NSURL *fileURL = [NSURL fileURLWithPath:filename];
     [self openNewWindowWithInitialFileURL:fileURL];
     return YES;
+}
+
+- (void)applicationWillTerminate:(NSNotification *)aNotification
+{
+    [[RFLoaderManager sharedManager] cleanup];
 }
 
 #pragma mark --- NSUserNotificationCenterDelegate ---

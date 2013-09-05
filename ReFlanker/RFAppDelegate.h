@@ -25,4 +25,6 @@
 - (NSArray *)allowedFileTypes;
 - (void)openNewWindowWithInitialFileURL:(NSURL *)fileURL;
 
+- (NSURL *)cacheDirectory;
+
 @end

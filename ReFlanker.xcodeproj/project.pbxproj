@@ -24,6 +24,17 @@
 		D65954FA178771CE00606B42 /* strnatcmp.c in Sources */ = {isa = PBXBuildFile; fileRef = D65954F8178771CE00606B42 /* strnatcmp.c */; };
 		D6595500178775DC00606B42 /* NSString+NaturalSort.m in Sources */ = {isa = PBXBuildFile; fileRef = D65954FF178775DC00606B42 /* NSString+NaturalSort.m */; };
 		D6967A2E176BD7EE00B005A5 /* NSImage+PixelSize.m in Sources */ = {isa = PBXBuildFile; fileRef = D6967A2D176BD7EE00B005A5 /* NSImage+PixelSize.m */; };
+		D6BA928217D659B000BECC9D /* RFLoaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BA928117D659B000BECC9D /* RFLoaderManager.m */; };
+		D6BA928817D65B7900BECC9D /* RFImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BA928717D65B7900BECC9D /* RFImageLoader.m */; };
+		D6BA928B17D65E7B00BECC9D /* RFZipLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BA928A17D65E7B00BECC9D /* RFZipLoader.m */; };
+		D6BA929917D6609500BECC9D /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = D6BA928F17D6609500BECC9D /* ioapi.c */; };
+		D6BA929A17D6609500BECC9D /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = D6BA929117D6609500BECC9D /* mztools.c */; };
+		D6BA929B17D6609500BECC9D /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = D6BA929317D6609500BECC9D /* unzip.c */; };
+		D6BA929C17D6609500BECC9D /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = D6BA929517D6609500BECC9D /* zip.c */; };
+		D6BA929D17D6609500BECC9D /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BA929817D6609500BECC9D /* SSZipArchive.m */; };
+		D6BA92A017D660D700BECC9D /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D6BA929F17D660D700BECC9D /* libz.1.2.5.dylib */; };
+		D6BA92A517D662CD00BECC9D /* libcommonCrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D6BA92A417D662CD00BECC9D /* libcommonCrypto.dylib */; };
+		D6BA92A817D8C2A000BECC9D /* NSData+MD5Digest.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BA92A717D8C2A000BECC9D /* NSData+MD5Digest.m */; };
 		D6BDD1301774BD4A00918BA9 /* AboutPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6BDD12F1774BD4A00918BA9 /* AboutPanel.xib */; };
 		D6BDD1331774BDC800918BA9 /* RFAboutPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BDD1321774BDC800918BA9 /* RFAboutPanelController.m */; };
 /* End PBXBuildFile section */
@@ -70,7 +81,29 @@
 		D65954FF178775DC00606B42 /* NSString+NaturalSort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+NaturalSort.m"; sourceTree = "<group>"; };
 		D6967A2C176BD7EE00B005A5 /* NSImage+PixelSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+PixelSize.h"; sourceTree = "<group>"; };
 		D6967A2D176BD7EE00B005A5 /* NSImage+PixelSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+PixelSize.m"; sourceTree = "<group>"; };
-		D6BDD12F1774BD4A00918BA9 /* AboutPanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AboutPanel.xib; path = ../AboutPanel.xib; sourceTree = "<group>"; };
+		D6BA928017D659B000BECC9D /* RFLoaderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFLoaderManager.h; sourceTree = "<group>"; };
+		D6BA928117D659B000BECC9D /* RFLoaderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFLoaderManager.m; sourceTree = "<group>"; };
+		D6BA928317D65B3D00BECC9D /* RFLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFLoader.h; sourceTree = "<group>"; };
+		D6BA928617D65B7900BECC9D /* RFImageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFImageLoader.h; sourceTree = "<group>"; };
+		D6BA928717D65B7900BECC9D /* RFImageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFImageLoader.m; sourceTree = "<group>"; };
+		D6BA928917D65E7B00BECC9D /* RFZipLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFZipLoader.h; sourceTree = "<group>"; };
+		D6BA928A17D65E7B00BECC9D /* RFZipLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFZipLoader.m; sourceTree = "<group>"; };
+		D6BA928E17D6609500BECC9D /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
+		D6BA928F17D6609500BECC9D /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
+		D6BA929017D6609500BECC9D /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
+		D6BA929117D6609500BECC9D /* mztools.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mztools.c; sourceTree = "<group>"; };
+		D6BA929217D6609500BECC9D /* mztools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mztools.h; sourceTree = "<group>"; };
+		D6BA929317D6609500BECC9D /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unzip.c; sourceTree = "<group>"; };
+		D6BA929417D6609500BECC9D /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unzip.h; sourceTree = "<group>"; };
+		D6BA929517D6609500BECC9D /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zip.c; sourceTree = "<group>"; };
+		D6BA929617D6609500BECC9D /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
+		D6BA929717D6609500BECC9D /* SSZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSZipArchive.h; path = ssziparchive/SSZipArchive.h; sourceTree = SOURCE_ROOT; };
+		D6BA929817D6609500BECC9D /* SSZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSZipArchive.m; path = ssziparchive/SSZipArchive.m; sourceTree = SOURCE_ROOT; };
+		D6BA929F17D660D700BECC9D /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
+		D6BA92A417D662CD00BECC9D /* libcommonCrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcommonCrypto.dylib; path = usr/lib/system/libcommonCrypto.dylib; sourceTree = SDKROOT; };
+		D6BA92A617D8C2A000BECC9D /* NSData+MD5Digest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MD5Digest.h"; sourceTree = "<group>"; };
+		D6BA92A717D8C2A000BECC9D /* NSData+MD5Digest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+MD5Digest.m"; sourceTree = "<group>"; };
+		D6BDD12F1774BD4A00918BA9 /* AboutPanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutPanel.xib; sourceTree = "<group>"; };
 		D6BDD1311774BDC800918BA9 /* RFAboutPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFAboutPanelController.h; sourceTree = "<group>"; };
 		D6BDD1321774BDC800918BA9 /* RFAboutPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFAboutPanelController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,6 +113,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6BA92A517D662CD00BECC9D /* libcommonCrypto.dylib in Frameworks */,
+				D6BA92A017D660D700BECC9D /* libz.1.2.5.dylib in Frameworks */,
 				D609D8FC176B743C00520535 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -119,6 +154,8 @@
 		D609D8FA176B743C00520535 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D6BA92A417D662CD00BECC9D /* libcommonCrypto.dylib */,
+				D6BA929F17D660D700BECC9D /* libz.1.2.5.dylib */,
 				D609D8FB176B743C00520535 /* Cocoa.framework */,
 				D609D919176B743D00520535 /* SenTestingKit.framework */,
 				D609D8FD176B743C00520535 /* Other Frameworks */,
@@ -142,6 +179,7 @@
 				D609D90D176B743C00520535 /* RFAppDelegate.h */,
 				D609D90E176B743C00520535 /* RFAppDelegate.m */,
 				D6A7D44E17D647B700BDF87C /* Controllers */,
+				D6BA927A17D6539500BECC9D /* Models */,
 				D6A7D44F17D647C400BDF87C /* Views and Windows */,
 				D6A7D45017D647E500BDF87C /* Extra */,
 				D6A7D45117D647F200BDF87C /* xibs */,
@@ -183,8 +221,8 @@
 		D65955011787766600606B42 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				D65954F9178771CE00606B42 /* strnatcmp.h */,
-				D65954F8178771CE00606B42 /* strnatcmp.c */,
+				D6BA929E17D6609D00BECC9D /* ssziparchive */,
+				D6BA928C17D65FAD00BECC9D /* strnatcmp */,
 			);
 			name = Vendor;
 			path = ReFlanker;
@@ -219,6 +257,8 @@
 				D6967A2D176BD7EE00B005A5 /* NSImage+PixelSize.m */,
 				D65954FE178775DC00606B42 /* NSString+NaturalSort.h */,
 				D65954FF178775DC00606B42 /* NSString+NaturalSort.m */,
+				D6BA92A617D8C2A000BECC9D /* NSData+MD5Digest.h */,
+				D6BA92A717D8C2A000BECC9D /* NSData+MD5Digest.m */,
 			);
 			name = Extra;
 			sourceTree = "<group>";
@@ -231,6 +271,57 @@
 				D6BDD12F1774BD4A00918BA9 /* AboutPanel.xib */,
 			);
 			name = xibs;
+			sourceTree = "<group>";
+		};
+		D6BA927A17D6539500BECC9D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D6BA928017D659B000BECC9D /* RFLoaderManager.h */,
+				D6BA928117D659B000BECC9D /* RFLoaderManager.m */,
+				D6BA928317D65B3D00BECC9D /* RFLoader.h */,
+				D6BA928617D65B7900BECC9D /* RFImageLoader.h */,
+				D6BA928717D65B7900BECC9D /* RFImageLoader.m */,
+				D6BA928917D65E7B00BECC9D /* RFZipLoader.h */,
+				D6BA928A17D65E7B00BECC9D /* RFZipLoader.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		D6BA928C17D65FAD00BECC9D /* strnatcmp */ = {
+			isa = PBXGroup;
+			children = (
+				D65954F9178771CE00606B42 /* strnatcmp.h */,
+				D65954F8178771CE00606B42 /* strnatcmp.c */,
+			);
+			name = strnatcmp;
+			path = ../strnatcmp;
+			sourceTree = "<group>";
+		};
+		D6BA928D17D6609500BECC9D /* minizip */ = {
+			isa = PBXGroup;
+			children = (
+				D6BA928E17D6609500BECC9D /* crypt.h */,
+				D6BA928F17D6609500BECC9D /* ioapi.c */,
+				D6BA929017D6609500BECC9D /* ioapi.h */,
+				D6BA929117D6609500BECC9D /* mztools.c */,
+				D6BA929217D6609500BECC9D /* mztools.h */,
+				D6BA929317D6609500BECC9D /* unzip.c */,
+				D6BA929417D6609500BECC9D /* unzip.h */,
+				D6BA929517D6609500BECC9D /* zip.c */,
+				D6BA929617D6609500BECC9D /* zip.h */,
+			);
+			name = minizip;
+			path = ssziparchive/minizip;
+			sourceTree = SOURCE_ROOT;
+		};
+		D6BA929E17D6609D00BECC9D /* ssziparchive */ = {
+			isa = PBXGroup;
+			children = (
+				D6BA928D17D6609500BECC9D /* minizip */,
+				D6BA929717D6609500BECC9D /* SSZipArchive.h */,
+				D6BA929817D6609500BECC9D /* SSZipArchive.m */,
+			);
+			name = ssziparchive;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,6 +443,15 @@
 				D6BDD1331774BDC800918BA9 /* RFAboutPanelController.m in Sources */,
 				D65954FA178771CE00606B42 /* strnatcmp.c in Sources */,
 				D6595500178775DC00606B42 /* NSString+NaturalSort.m in Sources */,
+				D6BA928217D659B000BECC9D /* RFLoaderManager.m in Sources */,
+				D6BA928817D65B7900BECC9D /* RFImageLoader.m in Sources */,
+				D6BA928B17D65E7B00BECC9D /* RFZipLoader.m in Sources */,
+				D6BA929917D6609500BECC9D /* ioapi.c in Sources */,
+				D6BA929A17D6609500BECC9D /* mztools.c in Sources */,
+				D6BA929B17D6609500BECC9D /* unzip.c in Sources */,
+				D6BA929C17D6609500BECC9D /* zip.c in Sources */,
+				D6BA929D17D6609500BECC9D /* SSZipArchive.m in Sources */,
+				D6BA92A817D8C2A000BECC9D /* NSData+MD5Digest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +576,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ReFlanker/ReFlanker-Prefix.pch";
 				INFOPLIST_FILE = "ReFlanker/ReFlanker-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)/usr/lib/system\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -488,6 +592,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ReFlanker/ReFlanker-Prefix.pch";
 				INFOPLIST_FILE = "ReFlanker/ReFlanker-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)/usr/lib/system\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
