@@ -19,6 +19,7 @@
 		D609D935176B7AE100520535 /* RFWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = D609D934176B7AE100520535 /* RFWindow.m */; };
 		D609D936176B7AE100520535 /* RFWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = D609D934176B7AE100520535 /* RFWindow.m */; };
 		D6143DD31770F14000D73C0E /* NSArray+Ring.m in Sources */ = {isa = PBXBuildFile; fileRef = D6143DD21770F14000D73C0E /* NSArray+Ring.m */; };
+		D62C49A41824782600774311 /* libSystem.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D62C49A31824782600774311 /* libSystem.dylib */; };
 		D633B024176B8AFC00E09476 /* DocumentWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = D633B022176B8AFC00E09476 /* DocumentWindow.xib */; };
 		D633B027176B8B4300E09476 /* RFWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = D633B026176B8B4300E09476 /* RFWindowController.m */; };
 		D65954FA178771CE00606B42 /* strnatcmp.c in Sources */ = {isa = PBXBuildFile; fileRef = D65954F8178771CE00606B42 /* strnatcmp.c */; };
@@ -33,7 +34,6 @@
 		D6BA929C17D6609500BECC9D /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = D6BA929517D6609500BECC9D /* zip.c */; };
 		D6BA929D17D6609500BECC9D /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BA929817D6609500BECC9D /* SSZipArchive.m */; };
 		D6BA92A017D660D700BECC9D /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D6BA929F17D660D700BECC9D /* libz.1.2.5.dylib */; };
-		D6BA92A517D662CD00BECC9D /* libcommonCrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D6BA92A417D662CD00BECC9D /* libcommonCrypto.dylib */; };
 		D6BA92A817D8C2A000BECC9D /* NSData+MD5Digest.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BA92A717D8C2A000BECC9D /* NSData+MD5Digest.m */; };
 		D6BDD1301774BD4A00918BA9 /* AboutPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6BDD12F1774BD4A00918BA9 /* AboutPanel.xib */; };
 		D6BDD1331774BDC800918BA9 /* RFAboutPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BDD1321774BDC800918BA9 /* RFAboutPanelController.m */; };
@@ -72,6 +72,7 @@
 		D609D934176B7AE100520535 /* RFWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFWindow.m; sourceTree = "<group>"; };
 		D6143DD11770F14000D73C0E /* NSArray+Ring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Ring.h"; sourceTree = "<group>"; };
 		D6143DD21770F14000D73C0E /* NSArray+Ring.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Ring.m"; sourceTree = "<group>"; };
+		D62C49A31824782600774311 /* libSystem.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libSystem.dylib; path = usr/lib/libSystem.dylib; sourceTree = SDKROOT; };
 		D633B023176B8AFC00E09476 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DocumentWindow.xib; sourceTree = "<group>"; };
 		D633B025176B8B4300E09476 /* RFWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFWindowController.h; sourceTree = "<group>"; };
 		D633B026176B8B4300E09476 /* RFWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFWindowController.m; sourceTree = "<group>"; };
@@ -113,7 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6BA92A517D662CD00BECC9D /* libcommonCrypto.dylib in Frameworks */,
+				D62C49A41824782600774311 /* libSystem.dylib in Frameworks */,
 				D6BA92A017D660D700BECC9D /* libz.1.2.5.dylib in Frameworks */,
 				D609D8FC176B743C00520535 /* Cocoa.framework in Frameworks */,
 			);
@@ -154,6 +155,7 @@
 		D609D8FA176B743C00520535 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D62C49A31824782600774311 /* libSystem.dylib */,
 				D6BA92A417D662CD00BECC9D /* libcommonCrypto.dylib */,
 				D6BA929F17D660D700BECC9D /* libz.1.2.5.dylib */,
 				D609D8FB176B743C00520535 /* Cocoa.framework */,
@@ -578,6 +580,7 @@
 					"$(inherited)",
 					"\"$(SDKROOT)/usr/lib/system\"",
 				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -594,6 +597,7 @@
 					"$(inherited)",
 					"\"$(SDKROOT)/usr/lib/system\"",
 				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
